@@ -3,9 +3,9 @@
     <ion-tabs>
       <ion-router-outlet></ion-router-outlet>
       <ion-tab-bar slot="bottom">
-        <ion-tab-button tab="todo" href="/tabs/todo">
+        <ion-tab-button tab="Inbox" href="/tabs/inbox">
           <ion-icon :icon="flash" />
-          <ion-label>Todo</ion-label>
+          <ion-label>Inbox</ion-label>
         </ion-tab-button>
           
         <ion-tab-button tab="projects" href="/tabs/projects">
