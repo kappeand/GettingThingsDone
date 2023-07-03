@@ -14,12 +14,25 @@ public class ProjectController {
     @Autowired
     private ProjectRepository projectRepository;
 
-    public List<Project> readByOwner(String name) {
-
-        return null;
+    public void create(Project newProject) {
+        projectRepository.save(newProject);
     }
 
-    public void addTask(Long projectId, Task task, String name) {
+    public List<Project> readByOwner(String ownerName) {
+        return projectRepository.findByOwner(ownerName);
+    }
 
+    public void update(Project project) {
+        projectRepository.save(project);
+    }
+
+    public void delete(Project project) {
+        projectRepository.delete(project);
+    }
+
+    public void addTask(Long projectId, Task task) {
+        Project project = projectRepository.getOne(projectId);
+        project.getTasks().add(task);
+        projectRepository.save(project);
     }
 }
