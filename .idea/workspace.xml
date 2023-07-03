@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8301d65c-bd29-4c94-8824-643755b7789f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="8301d65c-bd29-4c94-8824-643755b7789f" name="Changes" comment="Changed Layout of Todos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/Backend.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/Backend.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/api/todos.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/api/tasks.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/composables/useLogin.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/composables/useLogin.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/composables/useTodos.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/composables/useTasks.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/model/todo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/model/task.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/router/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/router/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Tabs.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Tabs.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Todo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Inbox.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,9 +21,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GithubDefaultAccount">
-    <option name="defaultAccountId" value="87c03ae5-bfd6-431c-90df-89058303fd27" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -62,7 +64,7 @@
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "editor.preferences.tabs",
-    "ts.external.directory.path": "C:\\Users\\andri\\IdeaProjects\\GettingThingsDone\\frontend\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "C:\\Users\\laure\\IdeaProjects\\GettingThingsDone\\frontend\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -109,7 +111,15 @@
       <option name="project" value="LOCAL" />
       <updated>1688378078617</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Changed Layout of Todos">
+      <option name="closed" value="true" />
+      <created>1688384694813</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1688384694813</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,6 +127,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="customized leantodo project" />
-    <option name="LAST_COMMIT_MESSAGE" value="customized leantodo project" />
+    <MESSAGE value="Changed Layout of Todos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed Layout of Todos" />
   </component>
 </project>
