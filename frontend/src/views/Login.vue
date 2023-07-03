@@ -36,8 +36,8 @@ import {
   IonButton,
   IonItem,
 } from "@ionic/vue";
-import { useLogin } from "../composables/useLogin";
+import {useLogin} from "../composables/useLogin";
 
-const { username, password, login } = useLogin();
+const {username, password, login} = useLogin();
 
 </script>

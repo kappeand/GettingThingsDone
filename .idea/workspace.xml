@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8301d65c-bd29-4c94-8824-643755b7789f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
+    <list default="true" id="8301d65c-bd29-4c94-8824-643755b7789f" name="Changes" comment="renamed todo to task">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/composables/useTasks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/composables/useTasks.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Inbox.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Inbox.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Tabs.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Tabs.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,9 +28,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
-  </component>
-  <component name="GithubDefaultAccount">
-    <option name="defaultAccountId" value="87c03ae5-bfd6-431c-90df-89058303fd27" />
   </component>
   <component name="JpbToolWindowState">
     <option name="isToolWindowVisible" value="false" />
@@ -60,7 +63,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/andri/IdeaProjects/GettingThingsDone/backend",
+    "last_opened_file_path": "C:/Users/laure/IdeaProjects/GettingThingsDone/frontend",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -73,7 +76,7 @@
     "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "spring.configuration.checksum": "b43fdd98b1fd705ae4c3a10cf25aad8a",
-    "ts.external.directory.path": "C:\\Users\\andri\\IdeaProjects\\GettingThingsDone\\frontend\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "C:\\Users\\laure\\IdeaProjects\\GettingThingsDone\\frontend\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -87,14 +90,15 @@
       <recent name="ch.zhaw.students.gtd.entity" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\laure\IdeaProjects\GettingThingsDone\frontend" />
       <recent name="C:\Users\andri\IdeaProjects\GettingThingsDone\backend" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\laure\IdeaProjects\GettingThingsDone\frontend\src\views" />
       <recent name="C:\Users\andri\IdeaProjects\GettingThingsDone\backend\src\main\java\ch\zhaw\sml\iwi\meng\leantodo" />
       <recent name="C:\Users\andri\IdeaProjects\GettingThingsDone\backend\src\main" />
       <recent name="C:\Users\andri\IdeaProjects\GettingThingsDone\backend\src\main\java\ch\zhaw\students\gtd\boundary" />
       <recent name="C:\Users\andri\IdeaProjects\GettingThingsDone\backend\src\main\java\ch\zhaw\students\gtd\entity" />
-      <recent name="C:\Users\andri\IdeaProjects\GettingThingsDone\backend\src\main\java\ch\zhaw\students\gtd" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -166,6 +170,8 @@
       <updated>1687283235476</updated>
       <workItem from="1688376090708" duration="7326000" />
       <workItem from="1688386619682" duration="5018000" />
+      <workItem from="1688394729088" duration="75000" />
+      <workItem from="1688394813795" duration="303000" />
     </task>
     <task id="LOCAL-00001" summary="customized leantodo project">
       <option name="closed" value="true" />

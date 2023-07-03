@@ -22,6 +22,7 @@ export function useTasks() {
         try {
             task.done = true;
             await updateTask(task);
+            console.log("ahhhh");
             getTasks();
         } catch (error) {
             console.log(error); // FIXME: Errorhandling

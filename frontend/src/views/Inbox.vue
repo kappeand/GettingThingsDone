@@ -19,23 +19,54 @@
           </ion-grid>
         </ion-item>
       </ion-list>
-      <ion-item>
-        <ion-input type="text" placeholder="New Task Title" v-model="newTask.title"></ion-input>
-      </ion-item>
-      <div padding>
-        <ion-button @click="addTask()">Add New Task</ion-button>
-      </div>
+      <ion-fab slot="fixed" horizontal="end" vertical="bottom">
+        <ion-fab-button id="open-modal" expand="block">
+          <ion-icon :icon="add"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+      <ion-modal ref="modal" trigger="open-modal" :initial-breakpoint="0.5" :breakpoints="[0, 0.25, 0.5, 0.75]">
+        <ion-content class="ion-padding">
+          <ion-item>
+            <ion-input type="text" placeholder="Title" v-model="newTask.title"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-textarea type="text" placeholder="Description" v-model="newTask.description"></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-datetime-button datetime="datetime"></ion-datetime-button>
+          </ion-item>
+          <ion-item>
+            <ion-select aria-label="priority" interface="popover" placeholder="Priority">
+              <ion-select-option value="High">High</ion-select-option>
+              <ion-select-option value="Medium">Medium</ion-select-option>
+              <ion-select-option value="Low">Low</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-button @click="addTask()" expand="full"> Create Task</ion-button>
+          </ion-item>
+          <ion-modal :keep-contents-mounted="true">
+            <ion-datetime v-model="newTask.dueDate" id="datetime"></ion-datetime>
+          </ion-modal>
+        </ion-content>
+      </ion-modal>
     </ion-content>
   </ion-page>
 </template>
 
 <script setup lang="ts">
 import {
+  IonDatetimeButton,
+  IonDatetime,
+  IonSelect,
+  IonSelectOption,
+  IonTextarea,
+  IonFab,
+  IonFabButton,
+  IonModal,
+  IonIcon,
   IonCheckbox,
   IonPage,
-  IonHeader,
-  IonToolbar,
-  IonTitle,
   IonContent,
   IonCol,
   IonRow,
@@ -45,9 +76,9 @@ import {
   IonButton,
   IonInput,
 } from "@ionic/vue";
+import {add, sendOutline} from 'ionicons/icons';
 import {useTasks} from "../composables/useTasks";
 import {addTask} from "@/api/tasks";
 
 const {newTask, tasks, getTasks, addTask, finishTask} = useTasks();
-
 </script>
