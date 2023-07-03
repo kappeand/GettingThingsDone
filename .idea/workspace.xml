@@ -5,32 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8301d65c-bd29-4c94-8824-643755b7789f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/Backend.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/Backend.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/boundary/ProjectEndpoint.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/boundary/TaskEndpoint.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/boundary/TokenEndpoint.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/boundary/UserEndpoint.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/controller/ProjectController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/controller/TaskController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/entity/Priority.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/entity/Project.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/entity/ProjectRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/entity/Role.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/entity/RoleRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/entity/Task.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/entity/TaskRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/entity/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/entity/UserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/security/TokenGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/security/TokenGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/data.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +21,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="GithubDefaultAccount">
     <option name="defaultAccountId" value="87c03ae5-bfd6-431c-90df-89058303fd27" />
@@ -130,7 +106,7 @@
   </component>
   <component name="RunManager" selected="Spring Boot.Backend (1)">
     <configuration name="Backend (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="LeanToDo" />
+      <module name="backend" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ch.zhaw.students.gtd.Backend" />
       <extension name="coverage">
         <pattern>
@@ -156,7 +132,7 @@
       </method>
     </configuration>
     <configuration name="Backend" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="LeanToDo" />
+      <module name="backend" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ch.zhaw.sml.iwi.meng.leantodo.Backend" />
       <extension name="coverage">
         <pattern>
@@ -223,7 +199,31 @@
       <option name="project" value="LOCAL" />
       <updated>1688390540729</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fixed auth">
+      <option name="closed" value="true" />
+      <created>1688394014656</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1688394014656</updated>
+    </task>
+    <task id="LOCAL-00006" summary="fixed auth">
+      <option name="closed" value="true" />
+      <created>1688394041552</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1688394041552</updated>
+    </task>
+    <task id="LOCAL-00007" summary="fixed auth">
+      <option name="closed" value="true" />
+      <created>1688394176054</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1688394176054</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -245,6 +245,7 @@
     <MESSAGE value="added Docker" />
     <MESSAGE value="renamed Entities, no functionality implemented" />
     <MESSAGE value="added test database input" />
-    <option name="LAST_COMMIT_MESSAGE" value="added test database input" />
+    <MESSAGE value="fixed auth" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed auth" />
   </component>
 </project>
