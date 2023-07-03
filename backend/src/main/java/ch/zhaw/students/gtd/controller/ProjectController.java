@@ -19,7 +19,7 @@ public class ProjectController {
     }
 
     public List<Project> readByOwner(String ownerName) {
-        return projectRepository.findByOwner(ownerName);
+        return null;
     }
 
     public void update(Project project) {

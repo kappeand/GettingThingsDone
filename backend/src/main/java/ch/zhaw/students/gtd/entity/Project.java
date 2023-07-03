@@ -1,5 +1,6 @@
 package ch.zhaw.students.gtd.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -19,7 +20,17 @@ public class Project {
     @OneToMany(mappedBy = "project", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Task> tasks = new ArrayList<>();
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    private User owner;
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "user_login_name", nullable = false)
+    @JsonIgnore
+    private User user;
 
+    public Project() {
+    }
+
+    public Project(String name, List<Task> tasks, User user) {
+        this.name = name;
+        this.tasks = tasks;
+        this.user = user;
+    }
 }

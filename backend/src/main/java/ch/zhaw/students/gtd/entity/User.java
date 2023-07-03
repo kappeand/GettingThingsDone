@@ -1,24 +1,19 @@
 package ch.zhaw.students.gtd.entity;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Getter
-@Setter 
+@Setter
 @NoArgsConstructor
-@Table(name="USERTABLE")
+@Table(name = "USERTABLE")
 public class User {
 
     @Id
@@ -29,5 +24,8 @@ public class User {
 
     @ManyToMany
     private List<Role> roles = new ArrayList<>();
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Project> projects = new ArrayList<>();
 
 }

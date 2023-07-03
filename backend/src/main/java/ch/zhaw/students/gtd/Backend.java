@@ -12,6 +12,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
+
 @SpringBootApplication
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true)
@@ -28,9 +32,11 @@ public class Backend implements CommandLineRunner {
     @Autowired
     private RoleRepository roleRepository;
 
-
     @Autowired
     private TaskRepository taskRepository;
+
+    @Autowired
+    private ProjectRepository projectRepository;
 
 
     @Bean
@@ -59,5 +65,25 @@ public class Backend implements CommandLineRunner {
         roleRepository.save(r);
         u.getRoles().add(r);
         userRepository.save(u);
+
+        Project p = new Project("Project1", null, u);
+        projectRepository.save(p);
+
+        Task t1 = new Task("Task1", "Description1", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS")
+                .parse("2017-11-15 15:30:14.332"),
+                Priority.HIGH, false, p);
+        taskRepository.save(t1);
+
+        Task t2 = new Task("Task2", "Description2", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS")
+                .parse("2017-11-15 15:30:14.332"), Priority.LOW, false, p);
+        taskRepository.save(t2);
+
+        List<Task> tasks = new ArrayList<>();
+        tasks.add(t1);
+        tasks.add(t2);
+
+        p.setTasks(tasks);
+
+        projectRepository.save(p);
     }
 }

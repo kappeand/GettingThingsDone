@@ -16,6 +16,6 @@ public class UserEndpoint {
     @PreAuthorize("isAuthenticated() AND hasRole('USER')")
     public String me(Principal principal) {
     
-        return "{\"user\": \"" + principal.getName() + "\"} ";
+        return "{\"owner\": \"" + principal.getName() + "\"} ";
     }
 }

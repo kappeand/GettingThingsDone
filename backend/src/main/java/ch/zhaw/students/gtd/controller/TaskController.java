@@ -18,8 +18,8 @@ public class TaskController {
         taskRepository.save(newTask);
     }
 
-    public List<Task> readByProject(Project project) {
-        return taskRepository.findByProject(project);
+    public List<Task> readByProject(Long id) {
+        return null;
     }
 
     public void update(Task task) {

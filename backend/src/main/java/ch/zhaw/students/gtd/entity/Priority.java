@@ -1,7 +1,7 @@
 package ch.zhaw.students.gtd.entity;
 
 public enum Priority {
-    Low, Medium, High;
+    LOW, MEDIUM, HIGH;
 
     @Override
     public String toString() {

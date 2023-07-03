@@ -19,8 +19,8 @@ public class TaskEndpoint {
 
     @RequestMapping(path = "/api/task", method = RequestMethod.GET)
     @PreAuthorize("isAuthenticated() AND hasRole('USER')")
-    public List<Task> getTasks(Project project) {
-        return taskController.readByProject(project);
+    public List<Task> getTasks(Long id) {
+        return taskController.readByProject(id);
     }
 
     @RequestMapping(path = "/api/task", method = RequestMethod.POST)
