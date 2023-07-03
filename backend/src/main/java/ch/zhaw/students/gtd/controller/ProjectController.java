@@ -3,8 +3,11 @@ package ch.zhaw.students.gtd.controller;
 import ch.zhaw.students.gtd.entity.Project;
 import ch.zhaw.students.gtd.entity.ProjectRepository;
 import ch.zhaw.students.gtd.entity.Task;
+import ch.zhaw.students.gtd.entity.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -13,13 +16,16 @@ public class ProjectController {
 
     @Autowired
     private ProjectRepository projectRepository;
+    @Autowired
+    private UserRepository userRepository;
 
-    public void create(Project newProject) {
+    public void create(Project newProject, String ownerName) {
+        newProject.setOwner(userRepository.getReferenceById(ownerName));
         projectRepository.save(newProject);
     }
 
     public List<Project> readByOwner(String ownerName) {
-        return null;
+        return projectRepository.findByOwner(userRepository.getReferenceById(ownerName));
     }
 
     public void update(Project project) {
@@ -31,8 +37,9 @@ public class ProjectController {
     }
 
     public void addTask(Long projectId, Task task) {
-        Project project = projectRepository.getOne(projectId);
-        project.getTasks().add(task);
-        projectRepository.save(project);
+        projectRepository.findById(projectId).ifPresentOrElse(project -> {
+            project.getTasks().add(task);
+            projectRepository.save(project);
+        }, () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Project not found."));
     }
 }

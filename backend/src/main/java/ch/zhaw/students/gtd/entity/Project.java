@@ -21,16 +21,16 @@ public class Project {
     private List<Task> tasks = new ArrayList<>();
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "user_login_name", nullable = false)
+    @JoinColumn(name = "owner_login_name", nullable = false)
     @JsonIgnore
-    private User user;
+    private User owner;
 
     public Project() {
     }
 
-    public Project(String name, List<Task> tasks, User user) {
+    public Project(String name, List<Task> tasks, User owner) {
         this.name = name;
         this.tasks = tasks;
-        this.user = user;
+        this.owner = owner;
     }
 }
