@@ -4,11 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8301d65c-bd29-4c94-8824-643755b7789f" name="Changes" comment="" />
+    <list default="true" id="8301d65c-bd29-4c94-8824-643755b7789f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/Backend.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/Backend.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/controller/ToDoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/controller/ToDoController.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GithubDefaultAccount">
     <option name="defaultAccountId" value="87c03ae5-bfd6-431c-90df-89058303fd27" />
@@ -24,6 +32,7 @@
     </option>
   </component>
   <component name="ProjectId" id="2S3X9L1YDsfAfnivMry11FwA1Jf" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="autoscrollToSource" value="true" />
@@ -39,10 +48,13 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
@@ -75,7 +87,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1687283235476</updated>
-      <workItem from="1688376090708" duration="893000" />
+      <workItem from="1688376090708" duration="1835000" />
     </task>
     <servers />
   </component>
