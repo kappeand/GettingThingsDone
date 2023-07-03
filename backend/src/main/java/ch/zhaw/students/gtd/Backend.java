@@ -19,7 +19,6 @@ public class Backend implements CommandLineRunner {
 
     public static void main(String[] args) {
         SpringApplication.run(Backend.class, args);
-
     }
 
     @Autowired
