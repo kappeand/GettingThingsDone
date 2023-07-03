@@ -1,5 +1,6 @@
 package ch.zhaw.students.gtd.controller;
 
+import ch.zhaw.students.gtd.entity.Project;
 import ch.zhaw.students.gtd.entity.Task;
 import ch.zhaw.students.gtd.entity.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,17 +12,21 @@ import java.util.List;
 public class TaskController {
 
     @Autowired
-    private TaskRepository TaskRepository;
+    private TaskRepository taskRepository;
 
-    public void persistTask(Task newTask, String name) {
-
+    public void create(Task newTask) {
+        taskRepository.save(newTask);
     }
 
-    public void updateTask(Task task, String name) {
-
+    public List<Task> readByProject(Project project) {
+        return taskRepository.findByProject(project);
     }
 
-    public List<Task> readByOwner(String name) {
-        return null;
+    public void update(Task task) {
+        taskRepository.save(task);
+    }
+
+    public void delete(Task task) {
+        taskRepository.delete(task);
     }
 }

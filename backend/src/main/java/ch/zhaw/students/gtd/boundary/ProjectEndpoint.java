@@ -26,6 +26,6 @@ public class ProjectEndpoint {
     @RequestMapping(path = "/api/project/{id}", method = RequestMethod.POST)
     @PreAuthorize("isAuthenticated() AND hasRole('USER')")
     public void addTask(@RequestParam(name = "id") Long projectId, @RequestBody Task task, Principal principal) {
-        projectController.addTask(projectId, task, principal.getName());
+        projectController.addTask(projectId, task);
     }
 }

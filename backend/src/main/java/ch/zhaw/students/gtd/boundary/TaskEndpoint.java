@@ -1,6 +1,7 @@
 package ch.zhaw.students.gtd.boundary;
 
 import ch.zhaw.students.gtd.controller.TaskController;
+import ch.zhaw.students.gtd.entity.Project;
 import ch.zhaw.students.gtd.entity.Task;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -16,21 +17,21 @@ public class TaskEndpoint {
     @Autowired
     private TaskController taskController;
 
-    @RequestMapping(path = "/api/todo", method = RequestMethod.GET)
+    @RequestMapping(path = "/api/task", method = RequestMethod.GET)
     @PreAuthorize("isAuthenticated() AND hasRole('USER')")
-    public List<Task> getTasks(Principal principal) {
-        return taskController.readByOwner(principal.getName());
+    public List<Task> getTasks(Project project) {
+        return taskController.readByProject(project);
     }
 
-    @RequestMapping(path = "/api/todo", method = RequestMethod.POST)
+    @RequestMapping(path = "/api/task", method = RequestMethod.POST)
     @PreAuthorize("isAuthenticated() AND hasRole('USER')")
     public void addTask(@RequestBody Task newTask, Principal principal) {
-        taskController.persistTask(newTask, principal.getName());
+        taskController.create(newTask);
     }
 
-    @RequestMapping(path = "/api/todo", method = RequestMethod.PUT)
+    @RequestMapping(path = "/api/task", method = RequestMethod.PUT)
     @PreAuthorize("isAuthenticated() AND hasRole('USER')")
     public void updateTask(@RequestBody Task task, Principal principal) {
-        taskController.updateTask(task, principal.getName());
+        taskController.update(task);
     }
 }
