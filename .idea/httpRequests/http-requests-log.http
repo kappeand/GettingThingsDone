@@ -1,0 +1,18 @@
+GET http://localhost:8080/api/task
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-07-03T154631.403.json
+
+###
+
+GET http://localhost:8080/api/project
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-07-03T154603.403.json
+
+###
+

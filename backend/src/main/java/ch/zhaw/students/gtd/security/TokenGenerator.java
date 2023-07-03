@@ -1,16 +1,17 @@
 package ch.zhaw.students.gtd.security;
 
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
 import ch.zhaw.students.gtd.entity.User;
 import ch.zhaw.students.gtd.entity.UserRepository;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
 
 @Service
 public class TokenGenerator {
@@ -31,15 +32,15 @@ public class TokenGenerator {
         if (user == null) {
             return null;
         }
-        userAuthResponse.setLoginName(user.getName());
+        userAuthResponse.setLoginName(user.getLoginName());
 
         Map<String, Object> claimsMap = new HashMap<>();
         String rolesCSV = "";
-        for (int i = 0; i < user.getRoles().size(); i++) {
-            String roleName = user.getRoles().get(i).getName();
+        for(int i = 0; i < user.getRoles().size(); i++) {
+            String roleName = user.getRoles().get(i).getRoleName();
             rolesCSV = rolesCSV + roleName;
             userAuthResponse.getRoles().add(roleName);
-            if (i < user.getRoles().size() - 1) {
+            if(i < user.getRoles().size() - 1) {
                 rolesCSV = rolesCSV + ",";
             }
         }
@@ -50,13 +51,13 @@ public class TokenGenerator {
         Date expirationDate = new Date(creationDate.getTime() + expiration * 1000);
 
         String token = Jwts.builder()
-                .setClaims(new HashMap<>())
-                .setSubject(user.getName())
-                .addClaims(claimsMap)
-                .setIssuedAt(creationDate)
-                .setExpiration(expirationDate)
-                .signWith(SignatureAlgorithm.HS512, secret)
-                .compact();
+            .setClaims(new HashMap<>())
+            .setSubject(user.getLoginName())
+            .addClaims(claimsMap)
+            .setIssuedAt(creationDate)
+            .setExpiration(expirationDate)
+            .signWith(SignatureAlgorithm.HS512, secret)
+            .compact();
         userAuthResponse.setExpiresAt(expirationDate);
         userAuthResponse.setJwsToken(token);
         return userAuthResponse;
