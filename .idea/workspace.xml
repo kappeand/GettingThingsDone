@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8301d65c-bd29-4c94-8824-643755b7789f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/Backend.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/Backend.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/controller/ToDoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/controller/ToDoController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,12 +40,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
@@ -71,13 +72,24 @@
   }
 }]]></component>
   <component name="RunManager">
-    <configuration name="Backend" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <configuration name="Backend" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="backend" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="ch.zhaw.sml.iwi.meng.leantodo.Backend" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ch.zhaw.students.gtd.Backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ch.zhaw.students.gtd.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.Backend" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -87,11 +99,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1687283235476</updated>
-      <workItem from="1688376090708" duration="1835000" />
+      <workItem from="1688376090708" duration="3243000" />
     </task>
+    <task id="LOCAL-00001" summary="customized leantodo project">
+      <option name="closed" value="true" />
+      <created>1688378078617</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1688378078617</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="customized leantodo project" />
+    <option name="LAST_COMMIT_MESSAGE" value="customized leantodo project" />
   </component>
 </project>
