@@ -5,20 +5,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8301d65c-bd29-4c94-8824-643755b7789f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/entity/Priority.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_07_2023_11_54__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_07_2023_11_54__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_07_2023_13_41__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_07_2023_13_41__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_07_2023_13_43__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_07_2023_13_43__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/Backend.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/Backend.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/boundary/ProjectEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/boundary/ProjectEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/boundary/ToDoEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/boundary/TaskEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/boundary/TokenEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/boundary/TokenEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/boundary/UserEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/boundary/UserEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/controller/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/controller/ProjectController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/controller/ToDoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/controller/TaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/entity/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/entity/Project.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/entity/ToDo.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/entity/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/entity/ToDoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/entity/TaskRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/security/TokenGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/security/TokenGenerator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GithubDefaultAccount">
     <option name="defaultAccountId" value="87c03ae5-bfd6-431c-90df-89058303fd27" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="isToolWindowVisible" value="false" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -61,7 +87,8 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "editor.preferences.tabs",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "spring.configuration.checksum": "b43fdd98b1fd705ae4c3a10cf25aad8a",
     "ts.external.directory.path": "C:\\Users\\andri\\IdeaProjects\\GettingThingsDone\\frontend\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   },
@@ -71,6 +98,16 @@
     ]
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="ch.zhaw.students.gtd.entity" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\andri\IdeaProjects\GettingThingsDone\backend" />
+      <recent name="C:\Users\andri\IdeaProjects\GettingThingsDone\frontend" />
+      <recent name="C:\Users\andri\IdeaProjects\GettingThingsDone" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Backend" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="backend" />
@@ -99,7 +136,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1687283235476</updated>
-      <workItem from="1688376090708" duration="3243000" />
+      <workItem from="1688376090708" duration="7326000" />
+      <workItem from="1688386619682" duration="1564000" />
     </task>
     <task id="LOCAL-00001" summary="customized leantodo project">
       <option name="closed" value="true" />
@@ -109,7 +147,15 @@
       <option name="project" value="LOCAL" />
       <updated>1688378078617</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added Docker">
+      <option name="closed" value="true" />
+      <created>1688382758161</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1688382758161</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,6 +163,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="customized leantodo project" />
-    <option name="LAST_COMMIT_MESSAGE" value="customized leantodo project" />
+    <MESSAGE value="added Docker" />
+    <option name="LAST_COMMIT_MESSAGE" value="added Docker" />
   </component>
 </project>

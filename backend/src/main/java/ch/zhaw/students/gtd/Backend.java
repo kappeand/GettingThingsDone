@@ -28,7 +28,7 @@ public class Backend implements CommandLineRunner {
     private RoleRepository roleRepository;
 
     @Autowired
-    private ToDoRepository toDoRepository;
+    private TaskRepository toDoRepository;
 
     @Bean
     public WebMvcConfigurer corsConfigurer() {
@@ -49,7 +49,7 @@ public class Backend implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         User u = new User();
-        u.setLoginName("user");
+        u.setName("user");
         u.setPasswordHash(new BCryptPasswordEncoder().encode("user"));
         Role r = new Role();
         r.setRoleName("ROLE_USER");

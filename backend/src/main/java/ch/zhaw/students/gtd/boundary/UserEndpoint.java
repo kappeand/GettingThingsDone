@@ -15,7 +15,6 @@ public class UserEndpoint {
     @RequestMapping(path = "/api/me", method = RequestMethod.GET, produces = "application/json")
     @PreAuthorize("isAuthenticated() AND hasRole('USER')")
     public String me(Principal principal) {
-
         return "{\"user\": \"" + principal.getName() + "\"} ";
     }
 }
