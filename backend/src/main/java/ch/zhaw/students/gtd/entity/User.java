@@ -15,7 +15,6 @@ import java.util.List;
 @NoArgsConstructor
 @Table(name = "USERTABLE")
 public class User {
-
     @Id
     private String name;
 
@@ -24,11 +23,4 @@ public class User {
 
     @ManyToMany
     private List<Role> roles = new ArrayList<>();
-
-    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Project> projects = new ArrayList<>();
-
-    @OneToMany(mappedBy = "owner", orphanRemoval = true)
-    private List<Task> tasks = new ArrayList<>();
-
 }

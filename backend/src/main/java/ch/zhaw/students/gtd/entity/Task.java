@@ -25,12 +25,6 @@ public class Task {
 
     private boolean done;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "owner_name")
-    private User owner;
-
     @ManyToOne
-    @JoinColumn(name = "project_id")
     private Project project;
-
 }

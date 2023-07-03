@@ -16,12 +16,10 @@ public class Project {
 
     private String name;
 
-
-    @ManyToOne(cascade = CascadeType.PERSIST, optional = false)
-    @JoinColumn(name = "owner_name", nullable = false)
-    private User owner;
-
     @OneToMany(mappedBy = "project", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Task> tasks = new ArrayList<>();
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    private User owner;
 
 }

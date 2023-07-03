@@ -52,7 +52,7 @@ public class Backend implements CommandLineRunner {
         u.setName("user");
         u.setPasswordHash(new BCryptPasswordEncoder().encode("user"));
         Role r = new Role();
-        r.setRoleName("ROLE_USER");
+        r.setName("USER");
         roleRepository.save(r);
         u.getRoles().add(r);
         userRepository.save(u);

@@ -9,6 +9,5 @@ import javax.persistence.Id;
 @Data
 public class Role {
     @Id
-    private String roleName;
-
+    private String name;
 }
