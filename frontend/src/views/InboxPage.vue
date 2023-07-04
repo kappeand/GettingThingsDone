@@ -34,7 +34,7 @@
           <ion-icon :icon="add"></ion-icon>
         </ion-fab-button>
       </ion-fab>
-      <TaskModal trigger="newTask-Modal" :modal-task="newTask"></TaskModal>
+        <TaskModal trigger="newTask-Modal" :modal-task="createNewTask()"></TaskModal>
     </ion-content>
   </ion-page>
 </template>
@@ -57,14 +57,17 @@ import {add} from 'ionicons/icons';
 import {useTasks} from "../composables/useTasks";
 import {useProjects} from "../composables/useProjects";
 import {Priority, Task} from "../model/task";
-import {onMounted} from "vue";
+import {onMounted, ref} from "vue";
 import TaskModal from '../components/TaskModal.vue'
 
-const {newTask, tasks, addTask, updateExistingTask, finishTask} = useTasks();
+const {tasks, addTask, updateExistingTask, finishTask} = useTasks();
 const {inboxId, projects, getInboxProjectId} = useProjects();
 
-onMounted(async () => {
+async function createNewTask() {
+  const newTask = ref<Task>({});
   newTask.value.projectId = await getInboxProjectId();
   newTask.value.priority = Priority.LOW;
-})
+  return newTask;
+}
+
 </script>

@@ -15,9 +15,6 @@
         </ion-select>
       </ion-item>
       <ion-item>
-        <ion-datetime-button v-model="modalTask.dueDate" datetime="datetime"></ion-datetime-button>
-      </ion-item>
-      <ion-item>
         <ion-select v-model="modalTask.priority" aria-label="priority" class="always-flip"
                     toggleIcon="caret-down-sharp" interface="popover" label="Priority">
           <ion-select-option value="HIGH">High</ion-select-option>
@@ -25,7 +22,7 @@
           <ion-select-option value="LOW">Low</ion-select-option>
         </ion-select>
       </ion-item>
-      <ion-button @click="saveTask(modalTask)" expand="full"> Create Task</ion-button>
+      <ion-button @click="addTask(modalTask)" expand="full"> Create Task</ion-button>
     </ion-content>
   </ion-modal>
 </template>
@@ -41,9 +38,10 @@ import {
   IonTextarea
 } from "@ionic/vue";
 import {useProjects} from "@/composables/useProjects";
-import {saveTask} from "@/api/tasks";
+import {useTasks} from "@/composables/useTasks";
 
 const {projects} = useProjects();
+const {addTask} = useTasks();
 defineProps(['modalTask', 'trigger']);
 
 

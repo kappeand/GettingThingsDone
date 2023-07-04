@@ -1,14 +1,11 @@
-import { getAllTasks, saveTask} from '@/api/tasks';
+import {getAllTasks, saveTask} from '@/api/tasks';
 import {Priority, Task} from '@/model/task';
 import {onMounted, ref, UnwrapRef} from 'vue';
 import {useProjects} from "@/composables/useProjects";
 
 export function useTasks() {
-
-    const {getInboxProjectId} = useProjects()
-
+    
     const tasks = ref<Task[]>([]);
-    const newTask = ref<Task>({});
 
     const getTasks = async () => {
         try {
@@ -31,17 +28,16 @@ export function useTasks() {
     }
 
     const addTask = async (task: Task) => {
-        try{
+        try {
             await saveTask(task);
             getTasks();
-        }  catch (error) {
+        } catch (error) {
             console.log(error); // FIXME: Errorhandling
         }
     }
 
     onMounted(getTasks);
     return {
-        newTask,
         tasks,
         getTasks,
         addTask,
