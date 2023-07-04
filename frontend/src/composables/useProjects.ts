@@ -1,16 +1,28 @@
 import {onMounted, ref, UnwrapRef} from 'vue';
 import {Project} from "@/model/project";
-import {getAllProjects} from "@/api/projects";
+import {getAllProjects, saveProject} from "@/api/projects";
 
 export function useProjects() {
 
     const projects = ref<Project[]>([]);
 
-    const newProject = ref<Project>({});
+    const addProject = async (value: UnwrapRef<Project>) => {
+        try {
+            await saveProject(ref<Project>({}).value);
+            await loadProjects();
+        } catch (error) {
+            console.log(error); // FIXME: Errorhandling
+        }
+    }
 
-    const inboxId = ref<number>();
+    async function getInboxId() {
+        if (projects.value.length === 0) { //has at least 1 project (Inbox)
+            await loadProjects();
+        }
+        return projects.value.findIndex(p => p.name === "Inbox");
+    }
 
-    const getProjects = async () => {
+    async function loadProjects() {
         try {
             projects.value = await getAllProjects();
         } catch (error) {
@@ -18,30 +30,13 @@ export function useProjects() {
         }
     }
 
-    const getInboxProjectId = async () =>{
-        await getProjects();
-        inboxId.value = projects.value[0].id;
-        return inboxId.value;
-    }
-
-    const addProject = async (value: UnwrapRef<Project>) => {
-        try {
-            // add the new todo and update the list of all todos afterwards
-            await addProject(newProject.value);
-            getProjects();
-        } catch (error) {
-            console.log(error); // FIXME: Errorhandling
-        }
-    }
-
-    onMounted(getInboxProjectId);
+    onMounted(async () => {
+        await loadProjects()
+    });
 
     return {
-        newProject,
-        inboxId,
+        getInboxId,
         projects,
-        getInboxProjectId,
-        getProjects,
         addProject
     }
 }

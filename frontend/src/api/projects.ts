@@ -14,19 +14,7 @@ export async function getAllProjects(): Promise<Project[]> {
     }
 }
 
-export async function addProject(project: Project): Promise<any> {
-    const config = {
-        withCredentials: true
-    }
-    try {
-        const response = await axios.put(API_ROOT + '/api/project', project, config);
-        return response.data;
-    } catch (error) {
-        return error;
-    }
-}
-
-export async function updateProject(project: Project): Promise<any> {
+export async function saveProject(project: Project): Promise<any> {
     const config = {
         withCredentials: true
     }

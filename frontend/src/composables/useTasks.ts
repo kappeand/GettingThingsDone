@@ -1,13 +1,12 @@
 import {getAllTasks, saveTask} from '@/api/tasks';
-import {Priority, Task} from '@/model/task';
-import {onMounted, ref, UnwrapRef} from 'vue';
-import {useProjects} from "@/composables/useProjects";
+import {Task} from '@/model/task';
+import {onMounted, ref} from 'vue';
+
+const tasks = ref<Task[]>([]);
 
 export function useTasks() {
-    
-    const tasks = ref<Task[]>([]);
 
-    const getTasks = async () => {
+    const loadTasks = async () => {
         try {
             tasks.value = await getAllTasks();
         } catch (error) {
@@ -21,27 +20,25 @@ export function useTasks() {
         try {
             task.done = true;
             await saveTask(task);
-            await getTasks();
+            await loadTasks();
         } catch (error) {
             console.log(error); // FIXME: Errorhandling
         }
     }
 
-    const addTask = async (task: Task) => {
+    const addOrUpdateTask = async (task: Task) => {
         try {
             await saveTask(task);
-            await getTasks();
+            await loadTasks();
         } catch (error) {
             console.log(error); // FIXME: Errorhandling
         }
     }
 
-    onMounted(getTasks);
+    onMounted(loadTasks);
     return {
         tasks,
-        getTasks,
-        addTask,
-        updateExistingTask: addTask,
+        addOrUpdateTask,
         finishTask
     }
 

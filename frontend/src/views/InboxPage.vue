@@ -6,7 +6,7 @@
           <ion-label>Inbox</ion-label>
         </ion-list-header>
         <div :key="task.id" v-for="task in tasks">
-          <ion-item :id="task.id" v-if="!task.done && inboxId == task.projectId">
+          <ion-item :id="task.id" v-if="showTasks(task)">
             <ion-grid>
               <ion-row>
                 <ion-col size="1">
@@ -33,7 +33,7 @@
         <ion-fab-button id="newTask-Modal" expand="block">
           <ion-icon :icon="add"></ion-icon>
         </ion-fab-button>
-        <TaskModal trigger="newTask-Modal" :modal-task="newTask"/>
+        <TaskModal trigger="newTask-Modal" :modal-task="null"/>
       </ion-fab>
     </ion-content>
   </ion-page>
@@ -58,14 +58,12 @@ import {useTasks} from "@/composables/useTasks";
 import {useProjects} from "@/composables/useProjects";
 import {Priority, Task} from "@/model/task";
 import TaskModal from '../components/TaskModal.vue'
-import {ref} from "vue";
 
 const {tasks, finishTask} = useTasks();
-const {inboxId, getInboxProjectId} = useProjects();
+const {getInboxId} = useProjects();
 
-const newTask = ref<Task>({
-  projectId: await getInboxProjectId(),
-  priority: Priority.LOW
-});
+async function showTasks(task: Task) {
+  return !task.done && task.projectId == await getInboxId()
+}
 
 </script>
