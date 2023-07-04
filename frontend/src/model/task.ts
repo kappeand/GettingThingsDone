@@ -6,11 +6,11 @@ export enum Priority {
 
 export interface Task {
     id?: number;
+    projectId?: number;
     name?: string;
     done?: boolean;
     description?: string;
     dueDate?: Date;
     priority?: Priority;
-    project?: Project;
 }
 

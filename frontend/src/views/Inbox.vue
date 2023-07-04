@@ -6,19 +6,18 @@
           <ion-label>Inbox</ion-label>
         </ion-list-header>
         <div :key="task.id" v-for="task in tasks">
-          <ion-item v-if="!task.done">
-            <ion-grid v-if="!task.done">
+          <ion-item v-if="!task.done && inboxId == task.projectId">
+            <ion-grid>
               <ion-row>
                 <ion-col size="1">
-                  <ion-checkbox v-if="task.priority == Priority.HIGH " labelPlacement="end" style="--border-color: red"
-                                mode="ios" color="red"
+                  <ion-checkbox v-if="task.priority == Priority.HIGH"
+                                style="--border-color: red" mode="ios" color="red"
                                 @click="finishTask(task)"></ion-checkbox>
-                  <ion-checkbox v-if="task.priority == Priority.MEDIUM " labelPlacement="end"
+                  <ion-checkbox v-if="task.priority == Priority.MEDIUM"
                                 style="--border-color: yellow" mode="ios" color="yellow"
                                 @click="finishTask(task)"></ion-checkbox>
-                  <ion-checkbox v-if="task.priority == Priority.LOW  " labelPlacement="end"
-                                style="--border-color: green"
-                                mode="ios" color="green"
+                  <ion-checkbox v-if="task.priority == Priority.LOW"
+                                style="--border-color: green" mode="ios" color="green"
                                 @click="finishTask(task)"></ion-checkbox>
                 </ion-col>
                 <ion-col>
@@ -29,7 +28,6 @@
           </ion-item>
         </div>
       </ion-list>
-
       <ion-fab slot="fixed" horizontal="end" vertical="bottom">
         <ion-fab-button id="open-modal" expand="block">
           <ion-icon :icon="add"></ion-icon>
@@ -91,5 +89,5 @@ import {addTask} from "@/api/tasks";
 import {Priority} from "../model/task"
 import {Project} from "@/model/project";
 
-const {newTask, tasks, getTasks, addTask, finishTask} = useTasks();
+const {newTask, tasks, inboxId, getTasks, addTask, finishTask} = useTasks();
 </script>

@@ -1,15 +1,23 @@
 import {getAllTasks, updateTask, addTask} from '@/api/tasks';
 import {Task} from '@/model/task';
+import {Project} from '@/model/project';
 import {onMounted, ref, UnwrapRef} from 'vue';
+import {getAllProjects} from "@/api/projects";
 
 export function useTasks() {
 
     const tasks = ref<Task[]>([]);
-
     const newTask = ref<Task>({});
 
+    const projects = ref<Project[]>([]);
+    const inboxId = ref<number>();
+
     const getTasks = async () => {
+
+        //TODO only do first time
         try {
+            projects.value = await getAllProjects();
+            inboxId.value = projects.value[0].id;
             tasks.value = await getAllTasks();
         } catch (error) {
             console.log(error); // FIXME: Errorhandling
@@ -22,8 +30,6 @@ export function useTasks() {
         try {
             task.done = true;
             await updateTask(task);
-            console.log("ahhhh");
-            await new Promise(f => setTimeout(f, 500));
             getTasks();
         } catch (error) {
             console.log(error); // FIXME: Errorhandling
@@ -44,6 +50,7 @@ export function useTasks() {
 
     return {
         newTask,
+        inboxId,
         tasks,
         getTasks,
         addTask,
