@@ -2,8 +2,8 @@
   <ion-page>
     <ion-content :fullscreen="true">
       <ion-list lines="inset">
-        <ion-list-header>
-          <ion-label mode="ios">Video Games</ion-label>
+        <ion-list-header mode="ios">
+          <ion-label>Inbox</ion-label>
         </ion-list-header>
         <ion-item :key="task.id" v-for="task in tasks">
           <ion-grid>
@@ -13,7 +13,7 @@
                               @click="finishTask(task)"></ion-checkbox>
               </ion-col>
               <ion-col>
-                {{ task.title }}
+                {{ task.name }}
               </ion-col>
             </ion-row>
           </ion-grid>
@@ -27,7 +27,7 @@
       <ion-modal ref="modal" trigger="open-modal" :initial-breakpoint="0.5" :breakpoints="[0, 0.25, 0.5, 0.75]">
         <ion-content class="ion-padding">
           <ion-item>
-            <ion-input type="text" placeholder="Title" v-model="newTask.title"></ion-input>
+            <ion-input type="text" placeholder="Title" v-model="newTask.name"></ion-input>
           </ion-item>
           <ion-item>
             <ion-textarea type="text" placeholder="Description" v-model="newTask.description"></ion-textarea>

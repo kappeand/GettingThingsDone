@@ -13,9 +13,9 @@
           <ion-label>Projects</ion-label>
         </ion-tab-button>
         
-        <ion-tab-button tab="timerecord" href="/tabs/timerecord">
-          <ion-icon :icon="send" />
-          <ion-label>Timerecord</ion-label>
+        <ion-tab-button tab="archive" href="/tabs/archive">
+          <ion-icon :icon="archiveOutline" />
+          <ion-label>Archive</ion-label>
         </ion-tab-button>
       </ion-tab-bar>
     </ion-tabs>
@@ -24,5 +24,5 @@
 
 <script setup lang="ts">
 import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet } from '@ionic/vue';
-import { fileTrayOutline, apps, send } from 'ionicons/icons';
+import {fileTrayOutline, apps, archiveOutline} from 'ionicons/icons';
 </script>
