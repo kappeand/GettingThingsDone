@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
-import java.security.Principal;
 import java.util.List;
 
 @RestController
@@ -16,10 +15,10 @@ public class TaskEndpoint {
     @Autowired
     private TaskController taskController;
 
-    @RequestMapping(path = "/api/task/{projectId}", method = RequestMethod.GET)
+    @RequestMapping(path = "/api/task/{username}", method = RequestMethod.GET)
     @PreAuthorize("isAuthenticated() AND hasRole('USER')")
-    public List<Task> getTasks(@PathVariable Long projectId) {
-        return taskController.readByProject(projectId);
+    public List<Task> getTasksByOwner(@PathVariable String username) {
+        return taskController.readByOwner(username);
     }
 
     @RequestMapping(path = "/api/task", method = RequestMethod.PUT)

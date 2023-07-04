@@ -23,7 +23,6 @@ public class ProjectEndpoint {
         projectController.create(project, principal.getName());
     }
 
-
     @RequestMapping(path = "/api/project", method = RequestMethod.GET)
     @PreAuthorize("isAuthenticated() AND hasRole('USER')")
     public List<Project> getProjects(Principal principal) {
