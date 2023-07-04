@@ -13,7 +13,7 @@
                               @click="finishTask(task)"></ion-checkbox>
               </ion-col>
               <ion-col>
-                {{ task.name }}
+                {{ task.name }} {{task.done}} {{task.priority}}
               </ion-col>
             </ion-row>
           </ion-grid>

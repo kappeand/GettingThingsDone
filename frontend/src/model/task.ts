@@ -1,3 +1,5 @@
+import {Project} from "@/model/project";
+
 enum priority {
     High,
     Middle,
@@ -10,8 +12,8 @@ export interface Task {
     done?: boolean;
     description?: string;
     dueDate?: Date;
-    priority?: priority.High;
-
+    priority?: priority;
+    project?: Project;
 
 }
 

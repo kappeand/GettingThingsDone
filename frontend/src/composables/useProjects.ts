@@ -1,4 +1,3 @@
-import {Task} from '@/model/task';
 import {onMounted, ref, UnwrapRef} from 'vue';
 import {Project} from "@/model/project";
 import {getAllProjects} from "@/api/projects";
