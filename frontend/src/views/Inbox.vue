@@ -42,13 +42,18 @@
             <ion-textarea type="text" placeholder="Description" v-model="newTask.description"></ion-textarea>
           </ion-item>
           <ion-item>
+            <ion-select v-model="newTask.projectId" aria-label="project" interface="popover" placeholder="Project" >
+              <ion-select-option :value="project.id" :key="project.id" v-for="project in projects">{{project.name}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
             <ion-datetime-button datetime="datetime"></ion-datetime-button>
           </ion-item>
           <ion-item>
-            <ion-select aria-label="priority" interface="popover" placeholder="Priority">
-              <ion-select-option value="High">High</ion-select-option>
-              <ion-select-option value="Medium">Medium</ion-select-option>
-              <ion-select-option value="Low">Low</ion-select-option>
+            <ion-select v-model="newTask.priority" aria-label="priority" interface="popover" placeholder="Priority">
+              <ion-select-option value="HIGH">High</ion-select-option>
+              <ion-select-option value="MEDIUM">Medium</ion-select-option>
+              <ion-select-option value="LOW">Low</ion-select-option>
             </ion-select>
           </ion-item>
           <ion-button @click="addTask()" expand="full"> Create Task</ion-button>
@@ -91,5 +96,5 @@ import {Priority} from "../model/task"
 import {Project} from "@/model/project";
 
 const {newTask, tasks, getTasks, addTask, finishTask} = useTasks();
-const {inboxId} = useProjects();
+const {inboxId, projects} = useProjects();
 </script>

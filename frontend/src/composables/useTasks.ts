@@ -32,6 +32,7 @@ export function useTasks() {
     const addTask = async (value: UnwrapRef<Task>) => {
         try {
             // add the new todo and update the list of all todos afterwards
+            console.log(newTask.value);
             await addTask(newTask.value);
             getTasks();
         } catch (error) {
