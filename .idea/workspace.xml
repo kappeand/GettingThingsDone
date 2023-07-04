@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8301d65c-bd29-4c94-8824-643755b7789f" name="Changes" comment="Set default values for Inbox new Task">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_07_2023_11_54__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_07_2023_11_54__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_07_2023_13_41__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_07_2023_13_41__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_07_2023_13_43__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_07_2023_13_43__Changes_.xml" afterDir="false" />
+    <list default="true" id="8301d65c-bd29-4c94-8824-643755b7789f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/TaskModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/TaskModal.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/composables/useTasks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/composables/useTasks.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/views/InboxPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/InboxPage.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -168,7 +163,7 @@
       <workItem from="1688394729088" duration="75000" />
       <workItem from="1688394813795" duration="1322000" />
       <workItem from="1688453503052" duration="17335000" />
-      <workItem from="1688473470762" duration="5827000" />
+      <workItem from="1688473470762" duration="7640000" />
     </task>
     <task id="LOCAL-00001" summary="customized leantodo project">
       <option name="closed" value="true" />
@@ -306,7 +301,15 @@
       <option name="project" value="LOCAL" />
       <updated>1688470879797</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="work in progress TaskModal">
+      <option name="closed" value="true" />
+      <created>1688479628540</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1688479628540</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -350,6 +353,7 @@
     <MESSAGE value="Refactored get InboxID code" />
     <MESSAGE value="Add Tasks functionality from Inbox" />
     <MESSAGE value="Set default values for Inbox new Task" />
-    <option name="LAST_COMMIT_MESSAGE" value="Set default values for Inbox new Task" />
+    <MESSAGE value="work in progress TaskModal" />
+    <option name="LAST_COMMIT_MESSAGE" value="work in progress TaskModal" />
   </component>
 </project>

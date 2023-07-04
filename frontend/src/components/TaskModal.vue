@@ -22,7 +22,7 @@
           <ion-select-option value="LOW">Low</ion-select-option>
         </ion-select>
       </ion-item>
-      <ion-button @click="async function (){await addTask(await getTask())}" expand="full"> Create Task</ion-button>
+      <ion-button @click="addTask(modalTask)" expand="full"> Create Task</ion-button>
     </ion-content>
   </ion-modal>
 </template>
@@ -35,21 +35,8 @@ import {Priority, Task} from "@/model/task";
 
 const {projects} = useProjects();
 const {addTask} = useTasks();
-const props = defineProps(['modalTask', 'trigger']);
+const props = defineProps(['modalTask', 'trigger', 'isNewTask']);
 
 const {getInboxProjectId} = useProjects();
-const task = ref<Task>({});
-
-async function getTask() {
-  if (props.modalTask != null) {
-    task.value = props.modalTask;
-  } else {
-    const newTask = ref<Task>({});
-    newTask.value.projectId = await getInboxProjectId();
-    newTask.value.priority = Priority.LOW;
-  }
-  return task.value;
-}
-
 
 </script>
