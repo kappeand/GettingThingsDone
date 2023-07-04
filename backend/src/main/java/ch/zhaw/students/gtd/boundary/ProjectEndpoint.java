@@ -28,6 +28,12 @@ public class ProjectEndpoint {
         return projectController.readByOwner(principal.getName());
     }
 
+    @RequestMapping(path = "/api/project", method = RequestMethod.POST)
+    @PreAuthorize("isAuthenticated() AND hasRole('USER')")
+    public void updateProject(@RequestBody Project project) {
+        projectController.update(project);
+    }
+
     @RequestMapping(path = "/api/project", method = RequestMethod.DELETE)
     @PreAuthorize("isAuthenticated() AND hasRole('USER')")
     public void deleteProject(@RequestParam Long projectId) {
