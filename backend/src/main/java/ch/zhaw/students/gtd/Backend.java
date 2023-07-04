@@ -71,11 +71,11 @@ public class Backend implements CommandLineRunner {
 
         Task t1 = new Task("Task1", "Description1", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS")
                 .parse("2017-11-15 15:30:14.332"),
-                Priority.HIGH, false, p);
+                Priority.HIGH, false, p.getId());
         taskRepository.save(t1);
 
         Task t2 = new Task("Task2", "Description2", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS")
-                .parse("2017-11-15 15:30:14.332"), Priority.LOW, false, p);
+                .parse("2017-11-15 15:30:14.332"), Priority.LOW, false, p.getId());
         taskRepository.save(t2);
 
         List<Task> tasks = new ArrayList<>();

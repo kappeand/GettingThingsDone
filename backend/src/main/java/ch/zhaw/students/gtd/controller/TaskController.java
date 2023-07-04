@@ -20,21 +20,19 @@ public class TaskController {
     private UserRepository userRepository;
 
     public void create(Task newTask) {
-        Project project = projectRepository.findById(newTask.getProject().getId()).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Project not found."));
+        Project project = projectRepository.findById(newTask.getProjectId()).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Project not found."));
         taskRepository.save(newTask);
         project.addTask(newTask);
         projectRepository.save(project);
     }
 
     public List<Task> readByOwner(String username) {
-        return projectRepository.findByOwner(userRepository.findById(username).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found.")))
-                .stream().map(project -> taskRepository.findByProject(project))
-                .collect(Collectors.toList()).stream().flatMap(List::stream).collect(Collectors.toList());
+        return projectRepository.findByOwner(userRepository.getReferenceById(username))
+                .stream().map(Project::getTasks).flatMap(List::stream).collect(Collectors.toList());
     }
 
     public List<Task> readByProject(Long id) {
-        return taskRepository.findByProject(projectRepository.findById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Project not found.")));
+        return taskRepository.findByProjectId(id);
     }
 
     public void update(Task task) {
