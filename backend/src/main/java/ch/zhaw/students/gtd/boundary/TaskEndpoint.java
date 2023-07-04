@@ -28,6 +28,12 @@ public class TaskEndpoint {
         return taskController.readByOwner(principal.getName());
     }
 
+    @RequestMapping(path = "/api/task/{projectId}", method = RequestMethod.GET)
+    @PreAuthorize("isAuthenticated() AND hasRole('USER')")
+    public List<Task> readTasksByOwner(@PathVariable Long projectId) {
+        return taskController.readByProject(projectId);
+    }
+
     @RequestMapping(path = "/api/task", method = RequestMethod.POST)
     @PreAuthorize("isAuthenticated() AND hasRole('USER')")
     public void updateTask(@RequestBody Task task) {
