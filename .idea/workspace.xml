@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8301d65c-bd29-4c94-8824-643755b7789f" name="Changes" comment="Updated done function">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="8301d65c-bd29-4c94-8824-643755b7789f" name="Changes" comment="Implemented Inbox">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/composables/useProjects.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/composables/useProjects.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/composables/useTasks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/composables/useTasks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/model/task.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/model/task.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/views/Inbox.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Inbox.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -173,7 +172,7 @@
       <workItem from="1688386619682" duration="5018000" />
       <workItem from="1688394729088" duration="75000" />
       <workItem from="1688394813795" duration="1322000" />
-      <workItem from="1688453503052" duration="8878000" />
+      <workItem from="1688453503052" duration="9345000" />
     </task>
     <task id="LOCAL-00001" summary="customized leantodo project">
       <option name="closed" value="true" />
@@ -279,7 +278,15 @@
       <option name="project" value="LOCAL" />
       <updated>1688460623624</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Implemented Inbox">
+      <option name="closed" value="true" />
+      <created>1688462413206</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1688462413206</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -307,6 +314,7 @@
     <MESSAGE value="updated Task api" />
     <MESSAGE value="Implemented Color changing checkbox based on task priority" />
     <MESSAGE value="Updated done function" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated done function" />
+    <MESSAGE value="Implemented Inbox" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented Inbox" />
   </component>
 </project>

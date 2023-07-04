@@ -85,9 +85,11 @@ import {
 } from "@ionic/vue";
 import {add} from 'ionicons/icons';
 import {useTasks} from "../composables/useTasks";
+import {useProjects} from "../composables/useProjects";
 import {addTask} from "@/api/tasks";
 import {Priority} from "../model/task"
 import {Project} from "@/model/project";
 
-const {newTask, tasks, inboxId, getTasks, addTask, finishTask} = useTasks();
+const {newTask, tasks, getTasks, addTask, finishTask} = useTasks();
+const {inboxId} = useProjects();
 </script>

@@ -8,12 +8,19 @@ export function useProjects() {
 
     const newProject = ref<Project>({});
 
+    const inboxId = ref<number>();
+
     const getProjects = async () => {
         try {
             projects.value = await getAllProjects();
         } catch (error) {
             console.log(error); // FIXME: Errorhandling
         }
+    }
+
+    const getInboxProjectId = async () => {
+        await getProjects();
+        inboxId.value = projects.value[0].id;
     }
 
     const addProject = async (value: UnwrapRef<Project>) => {
@@ -26,10 +33,11 @@ export function useProjects() {
         }
     }
 
-    onMounted(getProjects);
+    onMounted(getInboxProjectId);
 
     return {
         newProject,
+        inboxId,
         projects,
         getProjects,
         addProject
