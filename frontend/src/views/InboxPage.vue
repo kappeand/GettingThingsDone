@@ -6,7 +6,7 @@
           <ion-label>Inbox</ion-label>
         </ion-list-header>
         <div :key="task.id" v-for="task in tasks">
-          <ion-item id="open-modal" v-on:click="setTask(task)" v-if="!task.done && inboxId == task.projectId">
+          <ion-item :id="task.id" v-if="!task.done && inboxId == task.projectId">
             <ion-grid>
               <ion-row>
                 <ion-col size="1">
@@ -26,15 +26,15 @@
               </ion-row>
             </ion-grid>
           </ion-item>
-          <TaskModal :modal-task="task"></TaskModal>
+          <TaskModal :trigger="task.id" :modal-task="task"></TaskModal>
         </div>
       </ion-list>
       <ion-fab slot="fixed" horizontal="end" vertical="bottom">
-        <ion-fab-button id="open-modal" v-on:click="setTask(newTask)" expand="block">
+        <ion-fab-button id="newTask-Modal" expand="block">
           <ion-icon :icon="add"></ion-icon>
         </ion-fab-button>
       </ion-fab>
-      <TaskModal :modal-task="modalTask"></TaskModal>
+      <TaskModal trigger="newTask-Modal" :modal-task="newTask"></TaskModal>
     </ion-content>
   </ion-page>
 </template>
@@ -62,13 +62,6 @@ import TaskModal from '../components/TaskModal.vue'
 
 const {newTask, tasks, addTask, updateExistingTask, finishTask} = useTasks();
 const {inboxId, projects, getInboxProjectId} = useProjects();
-
-let modalTask = newTask;
-
-function setTask(task: Task) {
-  modalTask.value = task;
-
-}
 
 onMounted(async () => {
   newTask.value.projectId = await getInboxProjectId();

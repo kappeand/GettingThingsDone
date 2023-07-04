@@ -1,5 +1,5 @@
 <template>
-  <ion-modal ref="modal" trigger="open-modal" :initial-breakpoint="0.5" :breakpoints="[0, 0.25, 0.5, 0.75]">
+  <ion-modal  ref="modal" :trigger="trigger" :initial-breakpoint="0.5" :breakpoints="[0, 0.25, 0.5, 0.75]">
     <ion-content class="ion-padding">
       <ion-item>
         <ion-input type="text" placeholder="Title" v-model="modalTask.name"></ion-input>
@@ -15,7 +15,7 @@
         </ion-select>
       </ion-item>
       <ion-item>
-        <ion-datetime-button v-model="modalTask.dueDate"  datetime="datetime"></ion-datetime-button>
+        <ion-datetime-button v-model="modalTask.dueDate" datetime="datetime"></ion-datetime-button>
       </ion-item>
       <ion-item>
         <ion-select v-model="modalTask.priority" aria-label="priority" class="always-flip"
@@ -44,5 +44,7 @@ import {useProjects} from "@/composables/useProjects";
 import {saveTask} from "@/api/tasks";
 
 const {projects} = useProjects();
-defineProps(['modalTask'])
+defineProps(['modalTask', 'trigger']);
+
+
 </script>
