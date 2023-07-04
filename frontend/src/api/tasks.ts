@@ -19,7 +19,7 @@ export async function addTask(task: Task): Promise<any>   {
         withCredentials: true
     }
     try {
-        const response = await axios.post(API_ROOT + '/api/task', task, config);
+        const response = await axios.put(API_ROOT + '/api/task', task, config);
         return response.data;
     } catch (error) {
         return error;   
@@ -31,7 +31,7 @@ export async function updateTask(task: Task): Promise<any>   {
         withCredentials: true
     }
     try {
-        const response = await axios.put(API_ROOT + '/api/task', task, config);
+        const response = await axios.post(API_ROOT + '/api/task', task, config);
         return response.data;
     } catch (error) {
         return error;   
