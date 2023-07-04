@@ -65,32 +65,36 @@ public class Backend implements CommandLineRunner {
         u.getRoles().add(r);
         userRepository.save(u);
 
-        Project p = new Project("Project1", null, u);
-        projectRepository.save(p);
+        Project inbox = new Project("Inbox", null, u);
+        projectRepository.save(inbox);
+
+        Project work = new Project("Work", null, u);
+        projectRepository.save(work);
+
 
         Task t1 = new Task("Task1", "Description1", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS")
                 .parse("2017-11-15 15:30:14.332"),
-                Priority.HIGH, false, p.getId());
+                Priority.HIGH, false, work.getId());
         taskRepository.save(t1);
 
         Task t2 = new Task("Task2", "Description2", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS")
-                .parse("2017-11-15 15:30:14.332"), Priority.LOW, false, p.getId());
+                .parse("2017-11-15 15:30:14.332"), Priority.LOW, false, work.getId());
         taskRepository.save(t2);
 
         Task t3 = new Task("Task3", "Description3", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS")
-                .parse("2017-11-15 15:30:14.332"), Priority.MEDIUM, false, null);
+                .parse("2017-11-15 15:30:14.332"), Priority.MEDIUM, false, inbox.getId());
         taskRepository.save(t3);
 
         Task t4 = new Task("Task4", "Description4", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS")
-                .parse("2017-11-15 15:30:14.332"), Priority.MEDIUM, false, null);
+                .parse("2017-11-15 15:30:14.332"), Priority.MEDIUM, false, inbox.getId());
         taskRepository.save(t4);
 
         List<Task> tasks = new ArrayList<>();
         tasks.add(t1);
         tasks.add(t2);
 
-        p.setTasks(tasks);
+        work.setTasks(tasks);
 
-        projectRepository.save(p);
+        projectRepository.save(work);
     }
 }
