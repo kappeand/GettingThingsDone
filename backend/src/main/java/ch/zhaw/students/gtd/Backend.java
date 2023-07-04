@@ -38,7 +38,6 @@ public class Backend implements CommandLineRunner {
     @Autowired
     private ProjectRepository projectRepository;
 
-
     @Bean
     public WebMvcConfigurer corsConfigurer() {
         return new WebMvcConfigurer() {
@@ -77,6 +76,14 @@ public class Backend implements CommandLineRunner {
         Task t2 = new Task("Task2", "Description2", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS")
                 .parse("2017-11-15 15:30:14.332"), Priority.LOW, false, p.getId());
         taskRepository.save(t2);
+
+        Task t3 = new Task("Task3", "Description3", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS")
+                .parse("2017-11-15 15:30:14.332"), Priority.MEDIUM, false, null);
+        taskRepository.save(t3);
+
+        Task t4 = new Task("Task4", "Description4", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS")
+                .parse("2017-11-15 15:30:14.332"), Priority.MEDIUM, false, null);
+        taskRepository.save(t4);
 
         List<Task> tasks = new ArrayList<>();
         tasks.add(t1);
