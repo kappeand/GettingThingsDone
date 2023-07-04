@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8301d65c-bd29-4c94-8824-643755b7789f" name="Changes" comment="Implemented Projects">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/api/projects.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/api/projects.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/composables/useProjects.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/composables/useProjects.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/model/task.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/model/task.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/views/Inbox.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Inbox.vue" afterDir="false" />
+    <list default="true" id="8301d65c-bd29-4c94-8824-643755b7789f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/boundary/ProjectEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/boundary/ProjectEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/boundary/TaskEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ch/zhaw/students/gtd/boundary/TaskEndpoint.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +23,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="87c03ae5-bfd6-431c-90df-89058303fd27" />
   </component>
   <component name="JpbToolWindowState">
     <option name="isToolWindowVisible" value="false" />
@@ -49,48 +48,46 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/laure/IdeaProjects/GettingThingsDone/frontend/src/api&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;b43fdd98b1fd705ae4c3a10cf25aad8a&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\laure\\IdeaProjects\\GettingThingsDone\\frontend\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/andri/Downloads/leantodo-master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "spring.configuration.checksum": "b43fdd98b1fd705ae4c3a10cf25aad8a",
+    "ts.external.directory.path": "C:\\Users\\andri\\IdeaProjects\\GettingThingsDone\\frontend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;h2&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "h2"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="ch.zhaw.students.gtd.entity" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\laure\IdeaProjects\GettingThingsDone\frontend\src\api" />
-      <recent name="C:\Users\laure\IdeaProjects\GettingThingsDone\frontend\src\composables" />
       <recent name="C:\Users\laure\IdeaProjects\GettingThingsDone\frontend" />
       <recent name="C:\Users\andri\IdeaProjects\GettingThingsDone\backend" />
     </key>
@@ -109,20 +106,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.Backend (1)">
-    <configuration name="Backend (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="backend" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="ch.zhaw.students.gtd.Backend" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ch.zhaw.students.gtd.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration name="Backend" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ch.zhaw.students.gtd.Backend" />
@@ -149,13 +133,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Spring Boot.Backend (1)" />
-      <item itemvalue="Spring Boot.Backend" />
-    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.Backend (1)" />
         <item itemvalue="Spring Boot.Backend" />
         <item itemvalue="Spring Boot.Backend" />
       </list>
@@ -172,8 +151,11 @@
       <workItem from="1688376090708" duration="7326000" />
       <workItem from="1688386619682" duration="5018000" />
       <workItem from="1688394729088" duration="75000" />
-      <workItem from="1688394813795" duration="1322000" />
-      <workItem from="1688453503052" duration="3732000" />
+      <workItem from="1688394813795" duration="303000" />
+      <workItem from="1688395377211" duration="795000" />
+      <workItem from="1688397408513" duration="521000" />
+      <workItem from="1688402426474" duration="6203000" />
+      <workItem from="1688454135682" duration="3405000" />
     </task>
     <task id="LOCAL-00001" summary="customized leantodo project">
       <option name="closed" value="true" />
@@ -231,23 +213,87 @@
       <option name="project" value="LOCAL" />
       <updated>1688394176054</updated>
     </task>
-    <task id="LOCAL-00008" summary="Modified Task view">
+    <task id="LOCAL-00008" summary="working test data in db">
       <option name="closed" value="true" />
-      <created>1688395202766</created>
+      <created>1688407119800</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1688395202766</updated>
+      <updated>1688407119800</updated>
     </task>
-    <task id="LOCAL-00009" summary="Implemented Projects">
+    <task id="LOCAL-00009" summary="updated endpoints and controllers">
       <option name="closed" value="true" />
-      <created>1688455827197</created>
+      <created>1688408611427</created>
       <option name="number" value="00009" />
       <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1688455827197</updated>
+      <updated>1688408611427</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="get tasks by owner">
+      <option name="closed" value="true" />
+      <created>1688455367574</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1688455367574</updated>
+    </task>
+    <task id="LOCAL-00011" summary="added DELETE functionality">
+      <option name="closed" value="true" />
+      <created>1688455680330</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1688455680330</updated>
+    </task>
+    <task id="LOCAL-00012" summary="completed crud">
+      <option name="closed" value="true" />
+      <created>1688455934649</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1688455934649</updated>
+    </task>
+    <task id="LOCAL-00013" summary="add .gitignore">
+      <option name="closed" value="true" />
+      <created>1688455984918</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1688455984918</updated>
+    </task>
+    <task id="LOCAL-00014" summary="getBy Principal instead of username">
+      <option name="closed" value="true" />
+      <created>1688456045543</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1688456045543</updated>
+    </task>
+    <task id="LOCAL-00015" summary="switch put post">
+      <option name="closed" value="true" />
+      <created>1688456472265</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1688456472265</updated>
+    </task>
+    <task id="LOCAL-00016" summary="updated createTask">
+      <option name="closed" value="true" />
+      <created>1688456872603</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1688456872603</updated>
+    </task>
+    <task id="LOCAL-00017" summary="updated createTask">
+      <option name="closed" value="true" />
+      <created>1688457395561</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1688457395561</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,8 +316,15 @@
     <MESSAGE value="renamed Entities, no functionality implemented" />
     <MESSAGE value="added test database input" />
     <MESSAGE value="fixed auth" />
-    <MESSAGE value="Modified Task view" />
-    <MESSAGE value="Implemented Projects" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented Projects" />
+    <MESSAGE value="working test data in db" />
+    <MESSAGE value="updated endpoints and controllers" />
+    <MESSAGE value="get tasks by owner" />
+    <MESSAGE value="added DELETE functionality" />
+    <MESSAGE value="completed crud" />
+    <MESSAGE value="add .gitignore" />
+    <MESSAGE value="getBy Principal instead of username" />
+    <MESSAGE value="switch put post" />
+    <MESSAGE value="updated createTask" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated createTask" />
   </component>
 </project>

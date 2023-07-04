@@ -2,7 +2,6 @@ package ch.zhaw.students.gtd.boundary;
 
 import ch.zhaw.students.gtd.controller.ProjectController;
 import ch.zhaw.students.gtd.entity.Project;
-import ch.zhaw.students.gtd.entity.Task;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -25,7 +24,7 @@ public class ProjectEndpoint {
 
     @RequestMapping(path = "/api/project", method = RequestMethod.GET)
     @PreAuthorize("isAuthenticated() AND hasRole('USER')")
-    public List<Project> getProjects(Principal principal) {
+    public List<Project> readProjectsByOwner(Principal principal) {
         return projectController.readByOwner(principal.getName());
     }
 

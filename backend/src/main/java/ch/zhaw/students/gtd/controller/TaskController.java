@@ -1,9 +1,6 @@
 package ch.zhaw.students.gtd.controller;
 
-import ch.zhaw.students.gtd.entity.ProjectRepository;
-import ch.zhaw.students.gtd.entity.Task;
-import ch.zhaw.students.gtd.entity.TaskRepository;
-import ch.zhaw.students.gtd.entity.UserRepository;
+import ch.zhaw.students.gtd.entity.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
@@ -22,13 +19,11 @@ public class TaskController {
     @Autowired
     private UserRepository userRepository;
 
-    public void create(Task newTask, Long projectId) {
-        projectRepository.findById(projectId).map(project -> {
-            project.addTask(newTask);
-            newTask.setProject(project);
-            taskRepository.save(newTask);
-            return projectRepository.save(project);
-        }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Project not found."));
+    public void create(Task newTask) {
+        Project project = projectRepository.findById(newTask.getProject().getId()).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Project not found."));
+        taskRepository.save(newTask);
+        project.addTask(newTask);
+        projectRepository.save(project);
     }
 
     public List<Task> readByProject(Long id) {
