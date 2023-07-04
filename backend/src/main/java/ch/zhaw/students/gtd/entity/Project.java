@@ -33,4 +33,8 @@ public class Project {
         this.tasks = tasks;
         this.owner = owner;
     }
+
+    public void addTask(Task newTask) {
+        tasks.add(newTask);
+    }
 }

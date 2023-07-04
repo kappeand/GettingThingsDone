@@ -22,8 +22,13 @@ public class TaskController {
     @Autowired
     private UserRepository userRepository;
 
-    public void create(Task newTask) {
-        taskRepository.save(newTask);
+    public void create(Task newTask, Long projectId) {
+        projectRepository.findById(projectId).map(project -> {
+            project.addTask(newTask);
+            newTask.setProject(project);
+            taskRepository.save(newTask);
+            return projectRepository.save(project);
+        }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Project not found."));
     }
 
     public List<Task> readByProject(Long id) {
