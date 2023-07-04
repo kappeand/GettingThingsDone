@@ -2,7 +2,6 @@ package ch.zhaw.students.gtd.controller;
 
 import ch.zhaw.students.gtd.entity.Project;
 import ch.zhaw.students.gtd.entity.ProjectRepository;
-import ch.zhaw.students.gtd.entity.Task;
 import ch.zhaw.students.gtd.entity.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

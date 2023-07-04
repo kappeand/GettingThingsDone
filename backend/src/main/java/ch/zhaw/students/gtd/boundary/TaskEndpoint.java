@@ -30,7 +30,7 @@ public class TaskEndpoint {
 
     @RequestMapping(path = "/api/task/{projectId}", method = RequestMethod.GET)
     @PreAuthorize("isAuthenticated() AND hasRole('USER')")
-    public List<Task> readTasksByOwner(@PathVariable Long projectId) {
+    public List<Task> readTasksByProjectId(@PathVariable Long projectId) {
         return taskController.readByProject(projectId);
     }
 
