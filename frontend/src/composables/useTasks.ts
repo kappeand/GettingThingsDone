@@ -1,10 +1,11 @@
-import {getAllTasks, updateTask, addTask} from '@/api/tasks';
-import {Task} from '@/model/task';
-import {Project} from '@/model/project';
+import {addNewTask, getAllTasks, updateTask} from '@/api/tasks';
+import {Priority, Task} from '@/model/task';
 import {onMounted, ref, UnwrapRef} from 'vue';
-import {getAllProjects} from "@/api/projects";
+import {useProjects} from "@/composables/useProjects";
 
 export function useTasks() {
+
+    const {getInboxProjectId} = useProjects()
 
     const tasks = ref<Task[]>([]);
     const newTask = ref<Task>({});
@@ -29,11 +30,10 @@ export function useTasks() {
         }
     }
 
-    const addTask = async (value: UnwrapRef<Task>) => {
+    const addTask = async () => {
         try {
             // add the new todo and update the list of all todos afterwards
-            console.log(newTask.value);
-            await addTask(newTask.value);
+            await addNewTask(newTask.value);
             getTasks();
         } catch (error) {
             console.log(error); // FIXME: Errorhandling

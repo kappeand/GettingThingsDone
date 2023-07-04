@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8301d65c-bd29-4c94-8824-643755b7789f" name="Changes" comment="Refactored get InboxID code">
+    <list default="true" id="8301d65c-bd29-4c94-8824-643755b7789f" name="Changes" comment="Add Tasks functionality from Inbox">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/api/tasks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/api/tasks.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/composables/useProjects.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/composables/useProjects.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/composables/useTasks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/composables/useTasks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/views/Inbox.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Inbox.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/router/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/router/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Inbox.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/InboxPage.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +174,7 @@
       <workItem from="1688386619682" duration="5018000" />
       <workItem from="1688394729088" duration="75000" />
       <workItem from="1688394813795" duration="1322000" />
-      <workItem from="1688453503052" duration="9877000" />
+      <workItem from="1688453503052" duration="14961000" />
     </task>
     <task id="LOCAL-00001" summary="customized leantodo project">
       <option name="closed" value="true" />
@@ -293,7 +296,15 @@
       <option name="project" value="LOCAL" />
       <updated>1688462936211</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Add Tasks functionality from Inbox">
+      <option name="closed" value="true" />
+      <created>1688463574261</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1688463574261</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -323,6 +334,7 @@
     <MESSAGE value="Updated done function" />
     <MESSAGE value="Implemented Inbox" />
     <MESSAGE value="Refactored get InboxID code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored get InboxID code" />
+    <MESSAGE value="Add Tasks functionality from Inbox" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Tasks functionality from Inbox" />
   </component>
 </project>

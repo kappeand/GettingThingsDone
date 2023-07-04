@@ -14,7 +14,7 @@ export async function getAllTasks(): Promise<Task[]>   {
     }
 }
 
-export async function addTask(task: Task): Promise<any>   {
+export async function addNewTask(task: Task | undefined): Promise<any>   {
     const config = {        
         withCredentials: true
     }

@@ -23,7 +23,7 @@ const routes: Array<RouteRecordRaw> = [
       },
       {
         path: 'inbox',
-        component: () => import('@/views/Inbox.vue')
+        component: () => import('@/views/InboxPage.vue')
       },
       {
         path: 'projects',

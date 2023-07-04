@@ -42,15 +42,18 @@
             <ion-textarea type="text" placeholder="Description" v-model="newTask.description"></ion-textarea>
           </ion-item>
           <ion-item>
-            <ion-select v-model="newTask.projectId" aria-label="project" interface="popover" placeholder="Project" >
-              <ion-select-option :value="project.id" :key="project.id" v-for="project in projects">{{project.name}}</ion-select-option>
+            <ion-select v-model="newTask.projectId" aria-label="project" class="always-flip"
+                        toggleIcon="caret-down-sharp" interface="popover" label="Project">
+              <ion-select-option :value="project.id" :key="project.id" v-for="project in projects">{{ project.name }}
+              </ion-select-option>
             </ion-select>
           </ion-item>
           <ion-item>
             <ion-datetime-button datetime="datetime"></ion-datetime-button>
           </ion-item>
           <ion-item>
-            <ion-select v-model="newTask.priority" aria-label="priority" interface="popover" placeholder="Priority">
+            <ion-select v-model="newTask.priority" aria-label="priority" class="always-flip"
+                        toggleIcon="caret-down-sharp" interface="popover" label="Priority">
               <ion-select-option value="HIGH">High</ion-select-option>
               <ion-select-option value="MEDIUM">Medium</ion-select-option>
               <ion-select-option value="LOW">Low</ion-select-option>
@@ -91,10 +94,14 @@ import {
 import {add} from 'ionicons/icons';
 import {useTasks} from "../composables/useTasks";
 import {useProjects} from "../composables/useProjects";
-import {addTask} from "@/api/tasks";
 import {Priority} from "../model/task"
-import {Project} from "@/model/project";
+import {onMounted} from "vue";
 
-const {newTask, tasks, getTasks, addTask, finishTask} = useTasks();
-const {inboxId, projects} = useProjects();
+const {newTask, tasks, addTask, finishTask} = useTasks();
+const {inboxId, projects, getInboxProjectId} = useProjects();
+
+onMounted(async () => {
+  newTask.value.projectId = await getInboxProjectId();
+  newTask.value.priority = Priority.LOW;
+})
 </script>

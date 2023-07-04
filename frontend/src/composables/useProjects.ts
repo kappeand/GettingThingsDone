@@ -18,9 +18,10 @@ export function useProjects() {
         }
     }
 
-    const getInboxProjectId = async () => {
+    const getInboxProjectId = async () =>{
         await getProjects();
         inboxId.value = projects.value[0].id;
+        return inboxId.value;
     }
 
     const addProject = async (value: UnwrapRef<Project>) => {
@@ -39,6 +40,7 @@ export function useProjects() {
         newProject,
         inboxId,
         projects,
+        getInboxProjectId,
         getProjects,
         addProject
     }
