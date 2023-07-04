@@ -1,9 +1,7 @@
 import {Project} from "@/model/project";
 
-enum priority {
-    High,
-    Middle,
-    Low,
+export enum Priority {
+    HIGH = "HIGH", MEDIUM = "MEDIUM", LOW = "LOW"
 }
 
 export interface Task {
@@ -12,7 +10,7 @@ export interface Task {
     done?: boolean;
     description?: string;
     dueDate?: Date;
-    priority?: priority;
+    priority?: Priority;
     project?: Project;
 
 }

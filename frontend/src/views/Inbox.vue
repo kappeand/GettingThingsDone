@@ -9,11 +9,18 @@
           <ion-grid>
             <ion-row>
               <ion-col size="1">
-                <ion-checkbox labelPlacement="end" style="--border-color: green" mode="ios" color="success"
+                <ion-checkbox v-if="task.priority == Priority.HIGH " labelPlacement="end" style="--border-color: red"
+                              mode="ios" color="red"
+                              @click="finishTask(task)"></ion-checkbox>
+                <ion-checkbox v-if="task.priority == Priority.MEDIUM " labelPlacement="end"
+                              style="--border-color: yellow" mode="ios" color="yellow"
+                              @click="finishTask(task)"></ion-checkbox>
+                <ion-checkbox v-if="task.priority == Priority.LOW  " labelPlacement="end" style="--border-color: green"
+                              mode="ios" color="green"
                               @click="finishTask(task)"></ion-checkbox>
               </ion-col>
               <ion-col>
-                {{ task.name }} {{task.done}} {{task.priority}}
+                {{ task.name }} {{ task.done }}
               </ion-col>
             </ion-row>
           </ion-grid>
@@ -56,29 +63,30 @@
 
 <script setup lang="ts">
 import {
-  IonDatetimeButton,
+  IonButton,
+  IonCheckbox,
+  IonCol,
+  IonContent,
   IonDatetime,
+  IonDatetimeButton,
+  IonFab,
+  IonFabButton,
+  IonGrid,
+  IonIcon,
+  IonInput,
+  IonItem,
+  IonList,
+  IonModal,
+  IonPage,
+  IonRow,
   IonSelect,
   IonSelectOption,
   IonTextarea,
-  IonFab,
-  IonFabButton,
-  IonModal,
-  IonIcon,
-  IonCheckbox,
-  IonPage,
-  IonContent,
-  IonCol,
-  IonRow,
-  IonGrid,
-  IonItem,
-  IonList,
-  IonButton,
-  IonInput,
 } from "@ionic/vue";
-import {add, sendOutline} from 'ionicons/icons';
+import {add} from 'ionicons/icons';
 import {useTasks} from "../composables/useTasks";
 import {addTask} from "@/api/tasks";
+import {Priority} from "../model/task"
 
 const {newTask, tasks, getTasks, addTask, finishTask} = useTasks();
 </script>
