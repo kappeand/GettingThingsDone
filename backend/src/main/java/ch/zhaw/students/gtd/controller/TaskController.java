@@ -26,6 +26,12 @@ public class TaskController {
         projectRepository.save(project);
     }
 
+    public List<Task> readByOwner(String username) {
+        return projectRepository.findByOwner(userRepository.findById(username).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found.")))
+                .stream().map(project -> taskRepository.findByProject(project))
+                .collect(Collectors.toList()).stream().flatMap(List::stream).collect(Collectors.toList());
+    }
+
     public List<Task> readByProject(Long id) {
         return taskRepository.findByProject(projectRepository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Project not found.")));
@@ -37,13 +43,5 @@ public class TaskController {
 
     public void delete(Task task) {
         taskRepository.delete(task);
-    }
-
-    public List<Task> readByOwner(String username) {
-        return projectRepository.findByOwner(userRepository.findById(username).get()).stream().map(project -> taskRepository.findByProject(project)).collect(Collectors.toList()).stream().flatMap(List::stream).collect(Collectors.toList());
-    }
-
-    public List<Task> readAll() {
-        return taskRepository.findAll();
     }
 }
