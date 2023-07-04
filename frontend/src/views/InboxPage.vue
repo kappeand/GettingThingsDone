@@ -5,8 +5,8 @@
         <ion-list-header mode="ios">
           <ion-label>Inbox</ion-label>
         </ion-list-header>
-        <div :key="task.id" v-for="task in tasks">
-          <ion-item @click="openModal(task)" v-if="showTasks(task)">
+        <div :key="task.id" v-for="task in tasks" v-if="inboxId>-1">
+          <ion-item @click="openModal(task)" v-if="!task.done && task.projectId == inboxId">
             <ion-grid>
               <ion-row>
                 <ion-col size="1">
@@ -54,12 +54,14 @@ import {
 import {add} from 'ionicons/icons';
 import {useTasks} from "@/composables/useTasks";
 import {useProjects} from "@/composables/useProjects";
-import {Priority, Task} from "@/model/task";
+import {Priority} from "@/model/task";
+import {onMounted, ref} from "vue";
 
 const {tasks, finishTask, openModal} = useTasks();
 const {getInboxId} = useProjects();
 
-async function showTasks(task: Task) {
-  return !task.done && task.projectId == await getInboxId()
-}
+let inboxId = ref(-1);
+onMounted(async () => {
+  inboxId.value = await getInboxId() as number;
+})
 </script>

@@ -19,7 +19,7 @@ export function useProjects() {
         if (projects.value.length === 0) { //has at least 1 project (Inbox)
             await loadProjects();
         }
-        return projects.value.findIndex(p => p.name === "Inbox");
+        return projects.value.find(p => p.name === "Inbox")?.id;
     }
 
     async function loadProjects() {
@@ -31,7 +31,7 @@ export function useProjects() {
     }
 
     onMounted(async () => {
-        await loadProjects()
+        await loadProjects();
     });
 
     return {

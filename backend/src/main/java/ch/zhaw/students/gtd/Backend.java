@@ -72,20 +72,20 @@ public class Backend implements CommandLineRunner {
         projectRepository.save(work);
 
 
-        Task t1 = new Task("Task1", "Description1", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS")
+        Task t1 = new Task("Work Task 1", "Description1", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS")
                 .parse("2017-11-15 15:30:14.332"),
                 Priority.HIGH, false, work.getId());
         taskRepository.save(t1);
 
-        Task t2 = new Task("Task2", "Description2", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS")
+        Task t2 = new Task("Work Task 2", "Description2", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS")
                 .parse("2017-11-15 15:30:14.332"), Priority.LOW, false, work.getId());
         taskRepository.save(t2);
 
-        Task t3 = new Task("Task3", "Description3", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS")
+        Task t3 = new Task("Inbox Task 3", "Description3", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS")
                 .parse("2017-11-15 15:30:14.332"), Priority.MEDIUM, false, inbox.getId());
         taskRepository.save(t3);
 
-        Task t4 = new Task("Task4", "Description4", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS")
+        Task t4 = new Task("Inbox Task 4", "Description4", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS")
                 .parse("2017-11-15 15:30:14.332"), Priority.MEDIUM, false, inbox.getId());
         taskRepository.save(t4);
 

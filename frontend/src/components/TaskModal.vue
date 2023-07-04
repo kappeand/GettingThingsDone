@@ -9,7 +9,8 @@
     <ion-item>
       <ion-select v-model="task.projectId" aria-label="project" class="always-flip"
                   toggleIcon="caret-down-sharp" interface="popover" label="Project">
-        <ion-select-option :value="project.id" :key="project.id" v-for="project in projects">{{ project.name }}
+        <ion-select-option :value="project.id" :key="project.id" v-for="project in projects">
+          {{ project.name }}
         </ion-select-option>
       </ion-select>
     </ion-item>
