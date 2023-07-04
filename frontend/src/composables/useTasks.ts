@@ -1,6 +1,8 @@
 import {getAllTasks, saveTask} from '@/api/tasks';
 import {Task} from '@/model/task';
 import {onMounted, ref} from 'vue';
+import {modalController} from "@ionic/vue";
+import TaskModal from "@/components/TaskModal.vue";
 
 const tasks = ref<Task[]>([]);
 
@@ -35,12 +37,22 @@ export function useTasks() {
         }
     }
 
+    const openModal = async (task: any) => {
+        const modal = await modalController.create({
+            component: TaskModal,
+            componentProps: {
+                modalTask: task
+            }
+        });
+        await modal.present();
+    }
+
+
     onMounted(loadTasks);
     return {
+        openModal,
         tasks,
         addOrUpdateTask,
         finishTask
     }
-
-
 }
