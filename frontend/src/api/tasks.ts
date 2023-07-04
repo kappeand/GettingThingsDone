@@ -14,19 +14,7 @@ export async function getAllTasks(): Promise<Task[]>   {
     }
 }
 
-export async function addNewTask(task: Task | undefined): Promise<any>   {
-    const config = {        
-        withCredentials: true
-    }
-    try {
-        const response = await axios.put(API_ROOT + '/api/task', task, config);
-        return response.data;
-    } catch (error) {
-        return error;   
-    }
-}
-
-export async function updateTask(task: Task): Promise<any>   {
+export async function saveTask(task: Task): Promise<any>   {
     const config = {        
         withCredentials: true
     }

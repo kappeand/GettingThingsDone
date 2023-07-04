@@ -20,7 +20,7 @@
                                 style="--border-color: green" mode="ios" color="green"
                                 @click="finishTask(task)"></ion-checkbox>
                 </ion-col>
-                <ion-col>
+                <ion-col id="open-modal">
                   {{ task.name }}
                 </ion-col>
               </ion-row>
@@ -33,38 +33,7 @@
           <ion-icon :icon="add"></ion-icon>
         </ion-fab-button>
       </ion-fab>
-      <ion-modal ref="modal" trigger="open-modal" :initial-breakpoint="0.5" :breakpoints="[0, 0.25, 0.5, 0.75]">
-        <ion-content class="ion-padding">
-          <ion-item>
-            <ion-input type="text" placeholder="Title" v-model="newTask.name"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-textarea type="text" placeholder="Description" v-model="newTask.description"></ion-textarea>
-          </ion-item>
-          <ion-item>
-            <ion-select v-model="newTask.projectId" aria-label="project" class="always-flip"
-                        toggleIcon="caret-down-sharp" interface="popover" label="Project">
-              <ion-select-option :value="project.id" :key="project.id" v-for="project in projects">{{ project.name }}
-              </ion-select-option>
-            </ion-select>
-          </ion-item>
-          <ion-item>
-            <ion-datetime-button datetime="datetime"></ion-datetime-button>
-          </ion-item>
-          <ion-item>
-            <ion-select v-model="newTask.priority" aria-label="priority" class="always-flip"
-                        toggleIcon="caret-down-sharp" interface="popover" label="Priority">
-              <ion-select-option value="HIGH">High</ion-select-option>
-              <ion-select-option value="MEDIUM">Medium</ion-select-option>
-              <ion-select-option value="LOW">Low</ion-select-option>
-            </ion-select>
-          </ion-item>
-          <ion-button @click="addTask()" expand="full"> Create Task</ion-button>
-          <ion-modal :keep-contents-mounted="true">
-            <ion-datetime v-model="newTask.dueDate" id="datetime"></ion-datetime>
-          </ion-modal>
-        </ion-content>
-      </ion-modal>
+      <TaskModal :modal-task="newTask"></TaskModal>
     </ion-content>
   </ion-page>
 </template>
@@ -94,10 +63,11 @@ import {
 import {add} from 'ionicons/icons';
 import {useTasks} from "../composables/useTasks";
 import {useProjects} from "../composables/useProjects";
-import {Priority} from "../model/task"
+import {Priority} from "../model/task";
 import {onMounted} from "vue";
+import TaskModal from '../components/TaskModal.vue'
 
-const {newTask, tasks, addTask, finishTask} = useTasks();
+const {newTask, tasks, addTask, updateExistingTask, finishTask} = useTasks();
 const {inboxId, projects, getInboxProjectId} = useProjects();
 
 onMounted(async () => {

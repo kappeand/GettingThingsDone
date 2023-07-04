@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8301d65c-bd29-4c94-8824-643755b7789f" name="Changes" comment="Add Tasks functionality from Inbox">
+    <list default="true" id="8301d65c-bd29-4c94-8824-643755b7789f" name="Changes" comment="Set default values for Inbox new Task">
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/TaskModal.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/api/tasks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/api/tasks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/composables/useProjects.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/composables/useProjects.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/composables/useTasks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/composables/useTasks.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/router/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/router/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/views/Inbox.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/InboxPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/InboxPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/InboxPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/LoginPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Tabs.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Tabs.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,11 +98,11 @@
       <recent name="C:\Users\andri\IdeaProjects\GettingThingsDone\backend" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\laure\IdeaProjects\GettingThingsDone\frontend\src\components" />
       <recent name="C:\Users\laure\IdeaProjects\GettingThingsDone\frontend\src\views" />
       <recent name="C:\Users\andri\IdeaProjects\GettingThingsDone\backend\src\main\java\ch\zhaw\sml\iwi\meng\leantodo" />
       <recent name="C:\Users\andri\IdeaProjects\GettingThingsDone\backend\src\main" />
       <recent name="C:\Users\andri\IdeaProjects\GettingThingsDone\backend\src\main\java\ch\zhaw\students\gtd\boundary" />
-      <recent name="C:\Users\andri\IdeaProjects\GettingThingsDone\backend\src\main\java\ch\zhaw\students\gtd\entity" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -174,7 +176,7 @@
       <workItem from="1688386619682" duration="5018000" />
       <workItem from="1688394729088" duration="75000" />
       <workItem from="1688394813795" duration="1322000" />
-      <workItem from="1688453503052" duration="14961000" />
+      <workItem from="1688453503052" duration="17335000" />
     </task>
     <task id="LOCAL-00001" summary="customized leantodo project">
       <option name="closed" value="true" />
@@ -304,7 +306,15 @@
       <option name="project" value="LOCAL" />
       <updated>1688463574261</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Set default values for Inbox new Task">
+      <option name="closed" value="true" />
+      <created>1688470879797</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1688470879797</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -335,6 +345,7 @@
     <MESSAGE value="Implemented Inbox" />
     <MESSAGE value="Refactored get InboxID code" />
     <MESSAGE value="Add Tasks functionality from Inbox" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Tasks functionality from Inbox" />
+    <MESSAGE value="Set default values for Inbox new Task" />
+    <option name="LAST_COMMIT_MESSAGE" value="Set default values for Inbox new Task" />
   </component>
 </project>

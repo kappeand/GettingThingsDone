@@ -1,4 +1,4 @@
-import {addNewTask, getAllTasks, updateTask} from '@/api/tasks';
+import { getAllTasks, saveTask} from '@/api/tasks';
 import {Priority, Task} from '@/model/task';
 import {onMounted, ref, UnwrapRef} from 'vue';
 import {useProjects} from "@/composables/useProjects";
@@ -23,30 +23,31 @@ export function useTasks() {
         await new Promise(f => setTimeout(f, 500));
         try {
             task.done = true;
-            await updateTask(task);
+            await saveTask(task);
             getTasks();
         } catch (error) {
             console.log(error); // FIXME: Errorhandling
         }
     }
 
-    const addTask = async () => {
-        try {
-            // add the new todo and update the list of all todos afterwards
-            await addNewTask(newTask.value);
+    const addTask = async (task: Task) => {
+        try{
+            await saveTask(task);
             getTasks();
-        } catch (error) {
+        }  catch (error) {
             console.log(error); // FIXME: Errorhandling
         }
     }
 
     onMounted(getTasks);
-
     return {
         newTask,
         tasks,
         getTasks,
         addTask,
+        updateExistingTask: addTask,
         finishTask
     }
+
+
 }
