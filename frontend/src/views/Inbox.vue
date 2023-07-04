@@ -5,27 +5,31 @@
         <ion-list-header mode="ios">
           <ion-label>Inbox</ion-label>
         </ion-list-header>
-        <ion-item :key="task.id" v-for="task in tasks">
-          <ion-grid>
-            <ion-row>
-              <ion-col size="1">
-                <ion-checkbox v-if="task.priority == Priority.HIGH " labelPlacement="end" style="--border-color: red"
-                              mode="ios" color="red"
-                              @click="finishTask(task)"></ion-checkbox>
-                <ion-checkbox v-if="task.priority == Priority.MEDIUM " labelPlacement="end"
-                              style="--border-color: yellow" mode="ios" color="yellow"
-                              @click="finishTask(task)"></ion-checkbox>
-                <ion-checkbox v-if="task.priority == Priority.LOW  " labelPlacement="end" style="--border-color: green"
-                              mode="ios" color="green"
-                              @click="finishTask(task)"></ion-checkbox>
-              </ion-col>
-              <ion-col>
-                {{ task.name }} {{ task.done }}
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-        </ion-item>
+        <div :key="task.id" v-for="task in tasks">
+          <ion-item v-if="!task.done">
+            <ion-grid v-if="!task.done">
+              <ion-row>
+                <ion-col size="1">
+                  <ion-checkbox v-if="task.priority == Priority.HIGH " labelPlacement="end" style="--border-color: red"
+                                mode="ios" color="red"
+                                @click="finishTask(task)"></ion-checkbox>
+                  <ion-checkbox v-if="task.priority == Priority.MEDIUM " labelPlacement="end"
+                                style="--border-color: yellow" mode="ios" color="yellow"
+                                @click="finishTask(task)"></ion-checkbox>
+                  <ion-checkbox v-if="task.priority == Priority.LOW  " labelPlacement="end"
+                                style="--border-color: green"
+                                mode="ios" color="green"
+                                @click="finishTask(task)"></ion-checkbox>
+                </ion-col>
+                <ion-col>
+                  {{ task.name }}
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+        </div>
       </ion-list>
+
       <ion-fab slot="fixed" horizontal="end" vertical="bottom">
         <ion-fab-button id="open-modal" expand="block">
           <ion-icon :icon="add"></ion-icon>
@@ -49,9 +53,7 @@
               <ion-select-option value="Low">Low</ion-select-option>
             </ion-select>
           </ion-item>
-          <ion-item>
-            <ion-button @click="addTask()" expand="full"> Create Task</ion-button>
-          </ion-item>
+          <ion-button @click="addTask()" expand="full"> Create Task</ion-button>
           <ion-modal :keep-contents-mounted="true">
             <ion-datetime v-model="newTask.dueDate" id="datetime"></ion-datetime>
           </ion-modal>
@@ -87,6 +89,7 @@ import {add} from 'ionicons/icons';
 import {useTasks} from "../composables/useTasks";
 import {addTask} from "@/api/tasks";
 import {Priority} from "../model/task"
+import {Project} from "@/model/project";
 
 const {newTask, tasks, getTasks, addTask, finishTask} = useTasks();
 </script>

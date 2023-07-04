@@ -12,6 +12,5 @@ export interface Task {
     dueDate?: Date;
     priority?: Priority;
     project?: Project;
-
 }
 

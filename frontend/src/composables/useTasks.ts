@@ -23,6 +23,7 @@ export function useTasks() {
             task.done = true;
             await updateTask(task);
             console.log("ahhhh");
+            await new Promise(f => setTimeout(f, 500));
             getTasks();
         } catch (error) {
             console.log(error); // FIXME: Errorhandling
