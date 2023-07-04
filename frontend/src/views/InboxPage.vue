@@ -25,16 +25,16 @@
                 </ion-col>
               </ion-row>
             </ion-grid>
+            <TaskModal :trigger="task.id" :modal-task="task"/>
           </ion-item>
-          <TaskModal :trigger="task.id" :modal-task="task"></TaskModal>
         </div>
       </ion-list>
       <ion-fab slot="fixed" horizontal="end" vertical="bottom">
         <ion-fab-button id="newTask-Modal" expand="block">
           <ion-icon :icon="add"></ion-icon>
         </ion-fab-button>
+        <TaskModal trigger="newTask-Modal"  :modal-task="null" />
       </ion-fab>
-        <TaskModal trigger="newTask-Modal" :modal-task="createNewTask()"></TaskModal>
     </ion-content>
   </ion-page>
 </template>
@@ -54,20 +54,13 @@ import {
   IonRow,
 } from "@ionic/vue";
 import {add} from 'ionicons/icons';
-import {useTasks} from "../composables/useTasks";
-import {useProjects} from "../composables/useProjects";
-import {Priority, Task} from "../model/task";
-import {onMounted, ref} from "vue";
+import {useTasks} from "@/composables/useTasks";
+import {useProjects} from "@/composables/useProjects";
+import {Priority, Task} from "@/model/task";
+import {ref} from "vue";
 import TaskModal from '../components/TaskModal.vue'
 
-const {tasks, addTask, updateExistingTask, finishTask} = useTasks();
-const {inboxId, projects, getInboxProjectId} = useProjects();
-
-async function createNewTask() {
-  const newTask = ref<Task>({});
-  newTask.value.projectId = await getInboxProjectId();
-  newTask.value.priority = Priority.LOW;
-  return newTask;
-}
+const {tasks, finishTask} = useTasks();
+const {inboxId} = useProjects();
 
 </script>

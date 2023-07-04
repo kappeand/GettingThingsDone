@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8301d65c-bd29-4c94-8824-643755b7789f" name="Changes" comment="Refactored Modal">
+    <list default="true" id="8301d65c-bd29-4c94-8824-643755b7789f" name="Changes" comment="Set default values for Inbox new Task">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_07_2023_11_54__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_07_2023_11_54__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_07_2023_13_41__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_07_2023_13_41__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_07_2023_13_43__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_07_2023_13_43__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/TaskModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/TaskModal.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/composables/useTasks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/composables/useTasks.ts" afterDir="false" />
@@ -24,8 +28,16 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="6d1d99dc37e3ea30bca28ae3b61c6ba3f32c8a7c" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="87c03ae5-bfd6-431c-90df-89058303fd27" />
   </component>
   <component name="JpbToolWindowState">
     <option name="isToolWindowVisible" value="false" />
@@ -74,7 +86,7 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;b43fdd98b1fd705ae4c3a10cf25aad8a&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\laure\\IdeaProjects\\GettingThingsDone\\frontend\\node_modules\\typescript\\lib&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\andri\\IdeaProjects\\GettingThingsDone\\frontend\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -108,21 +120,8 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.Backend (1)">
+  <component name="RunManager">
     <configuration name="Backend (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="backend" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="ch.zhaw.students.gtd.Backend" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ch.zhaw.students.gtd.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Backend" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ch.zhaw.students.gtd.Backend" />
       <extension name="coverage">
@@ -148,14 +147,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Spring Boot.Backend (1)" />
-      <item itemvalue="Spring Boot.Backend" />
-    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.Backend (1)" />
-        <item itemvalue="Spring Boot.Backend" />
+        <item itemvalue="Spring Boot.Backend (1)" />
         <item itemvalue="Spring Boot.Backend" />
       </list>
     </recent_temporary>
@@ -172,7 +167,8 @@
       <workItem from="1688386619682" duration="5018000" />
       <workItem from="1688394729088" duration="75000" />
       <workItem from="1688394813795" duration="1322000" />
-      <workItem from="1688453503052" duration="21414000" />
+      <workItem from="1688453503052" duration="17335000" />
+      <workItem from="1688473470762" duration="5827000" />
     </task>
     <task id="LOCAL-00001" summary="customized leantodo project">
       <option name="closed" value="true" />
@@ -310,31 +306,7 @@
       <option name="project" value="LOCAL" />
       <updated>1688470879797</updated>
     </task>
-    <task id="LOCAL-00018" summary="Refactored Modal">
-      <option name="closed" value="true" />
-      <created>1688473344083</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1688473344083</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Refactored Modal">
-      <option name="closed" value="true" />
-      <created>1688474713689</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1688474713689</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Refactored Modal">
-      <option name="closed" value="true" />
-      <created>1688476614355</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1688476614355</updated>
-    </task>
-    <option name="localTasksCounter" value="21" />
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -345,7 +317,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -366,7 +350,6 @@
     <MESSAGE value="Refactored get InboxID code" />
     <MESSAGE value="Add Tasks functionality from Inbox" />
     <MESSAGE value="Set default values for Inbox new Task" />
-    <MESSAGE value="Refactored Modal" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored Modal" />
+    <option name="LAST_COMMIT_MESSAGE" value="Set default values for Inbox new Task" />
   </component>
 </project>

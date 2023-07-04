@@ -1,5 +1,5 @@
 <template>
-  <ion-modal  ref="modal" :trigger="trigger" :initial-breakpoint="0.5" :breakpoints="[0, 0.25, 0.5, 0.75]">
+  <ion-modal ref="modal" :trigger="trigger" :initial-breakpoint="0.5" :breakpoints="[0, 0.25, 0.5, 0.75]">
     <ion-content class="ion-padding">
       <ion-item>
         <ion-input type="text" placeholder="Title" v-model="modalTask.name"></ion-input>
@@ -22,27 +22,34 @@
           <ion-select-option value="LOW">Low</ion-select-option>
         </ion-select>
       </ion-item>
-      <ion-button @click="addTask(modalTask)" expand="full"> Create Task</ion-button>
+      <ion-button @click="async function (){await addTask(await getTask())}" expand="full"> Create Task</ion-button>
     </ion-content>
   </ion-modal>
 </template>
 <script setup lang="ts">
-import {
-  IonButton, IonContent,
-  IonDatetimeButton,
-  IonInput,
-  IonItem,
-  IonModal,
-  IonSelect,
-  IonSelectOption,
-  IonTextarea
-} from "@ionic/vue";
+import {IonButton, IonContent, IonInput, IonItem, IonModal, IonSelect, IonSelectOption, IonTextarea} from "@ionic/vue";
 import {useProjects} from "@/composables/useProjects";
 import {useTasks} from "@/composables/useTasks";
+import {ref} from "vue";
+import {Priority, Task} from "@/model/task";
 
 const {projects} = useProjects();
 const {addTask} = useTasks();
-defineProps(['modalTask', 'trigger']);
+const props = defineProps(['modalTask', 'trigger']);
+
+const {getInboxProjectId} = useProjects();
+const task = ref<Task>({});
+
+async function getTask() {
+  if (props.modalTask != null) {
+    task.value = props.modalTask;
+  } else {
+    const newTask = ref<Task>({});
+    newTask.value.projectId = await getInboxProjectId();
+    newTask.value.priority = Priority.LOW;
+  }
+  return task.value;
+}
 
 
 </script>

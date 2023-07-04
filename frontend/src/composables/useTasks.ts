@@ -21,7 +21,7 @@ export function useTasks() {
         try {
             task.done = true;
             await saveTask(task);
-            getTasks();
+            await getTasks();
         } catch (error) {
             console.log(error); // FIXME: Errorhandling
         }
@@ -30,7 +30,7 @@ export function useTasks() {
     const addTask = async (task: Task) => {
         try {
             await saveTask(task);
-            getTasks();
+            await getTasks();
         } catch (error) {
             console.log(error); // FIXME: Errorhandling
         }
