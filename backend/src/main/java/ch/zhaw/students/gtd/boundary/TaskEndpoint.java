@@ -26,4 +26,10 @@ public class TaskEndpoint {
     public void updateTask(@RequestBody Task task) {
         taskController.update(task);
     }
+
+    @RequestMapping(path = "/api/task", method = RequestMethod.DELETE)
+    @PreAuthorize("isAuthenticated() AND hasRole('USER')")
+    public void deleteTask(@RequestBody Task task) {
+        taskController.delete(task);
+    }
 }

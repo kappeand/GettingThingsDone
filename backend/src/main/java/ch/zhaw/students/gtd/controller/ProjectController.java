@@ -32,8 +32,9 @@ public class ProjectController {
         projectRepository.save(project);
     }
 
-    public void delete(Project project) {
-        projectRepository.delete(project);
+    public void delete(Long projectId) {
+        projectRepository.delete(projectRepository.findById(projectId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Project not found.")));
     }
 
     public void addTask(Long projectId, Task task) {

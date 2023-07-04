@@ -34,4 +34,10 @@ public class ProjectEndpoint {
     public void addTask(@RequestParam Long projectId, @RequestBody Task task) {
         projectController.addTask(projectId, task);
     }
+
+    @RequestMapping(path = "/api/project", method = RequestMethod.DELETE)
+    @PreAuthorize("isAuthenticated() AND hasRole('USER')")
+    public void deleteProject(@RequestParam Long projectId) {
+        projectController.delete(projectId);
+    }
 }
