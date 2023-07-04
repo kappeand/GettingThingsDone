@@ -19,8 +19,8 @@ public class TaskEndpoint {
 
     @RequestMapping(path = "/api/task", method = RequestMethod.PUT)
     @PreAuthorize("isAuthenticated() AND hasRole('USER')")
-    public void createTask(@RequestParam Long projectId, @RequestBody Task task) {
-        taskController.create(task, projectId);
+    public void createTask(@RequestBody Task task) {
+        taskController.create(task);
     }
 
     @RequestMapping(path = "/api/task", method = RequestMethod.GET)
