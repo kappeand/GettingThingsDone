@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8301d65c-bd29-4c94-8824-643755b7789f" name="Changes" comment="Set default values for Inbox new Task">
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/TaskModal.vue" afterDir="false" />
+    <list default="true" id="8301d65c-bd29-4c94-8824-643755b7789f" name="Changes" comment="Refactored Modal">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/api/tasks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/api/tasks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/composables/useTasks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/composables/useTasks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/router/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/router/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/views/InboxPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/InboxPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/LoginPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/views/Tabs.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Tabs.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,7 +170,7 @@
       <workItem from="1688386619682" duration="5018000" />
       <workItem from="1688394729088" duration="75000" />
       <workItem from="1688394813795" duration="1322000" />
-      <workItem from="1688453503052" duration="17335000" />
+      <workItem from="1688453503052" duration="18783000" />
     </task>
     <task id="LOCAL-00001" summary="customized leantodo project">
       <option name="closed" value="true" />
@@ -314,7 +308,15 @@
       <option name="project" value="LOCAL" />
       <updated>1688470879797</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Refactored Modal">
+      <option name="closed" value="true" />
+      <created>1688473344083</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1688473344083</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -346,6 +348,7 @@
     <MESSAGE value="Refactored get InboxID code" />
     <MESSAGE value="Add Tasks functionality from Inbox" />
     <MESSAGE value="Set default values for Inbox new Task" />
-    <option name="LAST_COMMIT_MESSAGE" value="Set default values for Inbox new Task" />
+    <MESSAGE value="Refactored Modal" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored Modal" />
   </component>
 </project>
