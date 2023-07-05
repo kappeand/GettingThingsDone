@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8301d65c-bd29-4c94-8824-643755b7789f" name="Changes" comment="changed delete to id param">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="8301d65c-bd29-4c94-8824-643755b7789f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/ProjectList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ProjectList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/TaskList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/TaskList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/composables/useProjects.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/composables/useProjects.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/composables/useTasksOfProjectId.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/composables/useTasksOfProjectId.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +174,7 @@
       <workItem from="1688482991291" duration="1753000" />
       <workItem from="1688492261958" duration="13586000" />
       <workItem from="1688506685929" duration="41000" />
-      <workItem from="1688540568712" duration="19474000" />
+      <workItem from="1688540568712" duration="21008000" />
     </task>
     <task id="LOCAL-00001" summary="customized leantodo project">
       <option name="closed" value="true" />
@@ -406,7 +408,15 @@
       <option name="project" value="LOCAL" />
       <updated>1688563087643</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="added remove and edit to projects">
+      <option name="closed" value="true" />
+      <created>1688563395535</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1688563395535</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -436,7 +446,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="customized leantodo project" />
     <MESSAGE value="added Docker" />
     <MESSAGE value="renamed Entities, no functionality implemented" />
     <MESSAGE value="added test database input" />
@@ -461,6 +470,7 @@
     <MESSAGE value="update/create projects implemented" />
     <MESSAGE value="changed delete to id param" />
     <MESSAGE value="work in progress" />
-    <option name="LAST_COMMIT_MESSAGE" value="work in progress" />
+    <MESSAGE value="added remove and edit to projects" />
+    <option name="LAST_COMMIT_MESSAGE" value="added remove and edit to projects" />
   </component>
 </project>

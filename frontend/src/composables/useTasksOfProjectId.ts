@@ -28,8 +28,7 @@ export function useTasksOfProjectId(projectId: number) {
         }
     }
     const removeTask = async (task: Task) => {
-        //wait for delete animation to finish
-        await new Promise(f => setTimeout(f, 500));
+        console.log(task.id);
         try {
             await deleteTask(task);
             await loadTasks();

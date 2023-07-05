@@ -28,8 +28,7 @@ export function useProjects() {
     }
 
     async function removeProject(project: Project) {
-        //wait for delete animation to finish
-        await new Promise(f => setTimeout(f, 500));
+        console.log(project.id);
         try {
             await deleteProject(project);
             await loadProjects();
