@@ -27,8 +27,7 @@
           <ion-row>
             <p>Due date</p>
             <ion-datetime-button v-if="modalTask.dueDate != undefined" datetime="datetime"></ion-datetime-button>
-            <ion-datetime-button v-if="modalTask.dueDate == undefined" datetime="datetime"
-                                 :color="'success'"></ion-datetime-button>
+            <ion-datetime-button v-if="modalTask.dueDate == undefined" datetime="datetime"></ion-datetime-button>
           </ion-row>
           <ion-modal :keep-contents-mounted="true">
             <ion-datetime locale="de-CH" first-day-of-week="1" v-model="modalTask.dueDate" id="datetime"></ion-datetime>
