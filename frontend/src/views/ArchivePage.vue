@@ -1,16 +1,12 @@
 <template>
   <ion-page>
     <ion-content :fullscreen="true">
-      <ion-list lines="inset">
-        <ion-list-header mode="ios">
-          <ion-label>Archive</ion-label>
-        </ion-list-header>
-      </ion-list>
+      <ProjectList :is-archive="true"/>
     </ion-content>
   </ion-page>
 </template>
 
 <script setup lang="ts">
-import {IonPage, IonListHeader, IonContent, IonList} from '@ionic/vue';
-
+import {IonContent, IonPage} from '@ionic/vue';
+import ProjectList from "@/components/ProjectList.vue";
 </script>

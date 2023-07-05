@@ -1,7 +1,7 @@
 <template>
   <ion-page>
     <ion-content :fullscreen="true">
-      <ProjectList/>
+      <ProjectList :is-archive="false"/>
     </ion-content>
   </ion-page>
 </template>

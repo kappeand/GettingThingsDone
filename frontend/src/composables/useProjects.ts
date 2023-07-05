@@ -50,17 +50,18 @@ export function useProjects() {
             initialBreakpoint: 0.5,
             componentProps: {
                 modalProject: project,
-                isNewProject: isNewProject
+                isNewProject: isNewProject,
             }
         });
         await modal.present();
     };
 
-    const openTaskListModal = async (project: Project) => {
+    const openTaskListModal = async (project: Project, isArchive: boolean) => {
         const modal = await modalController.create({
             component: TaskListModal,
             componentProps: {
-                projectId: project.id
+                projectId: project.id,
+                isArchive: isArchive
             }
         });
         await modal.present();

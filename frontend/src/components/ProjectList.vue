@@ -1,10 +1,11 @@
 <template>
   <ion-list lines="inset">
     <ion-list-header mode="ios">
-      <ion-label>Projects</ion-label>
+      <ion-label v-if="isArchive">Archive</ion-label>
+      <ion-label v-else>Projects</ion-label>
     </ion-list-header>
     <div :key="project.id" v-for="project in projects">
-      <ion-item-sliding v-if="project.name != 'Inbox'">
+      <ion-item-sliding v-if="!isArchive ? project.name != 'Inbox': true">
         <ion-item-options side="start">
           <ion-item-option color="success" @click="openProjectModal(project,false)">
             <ion-icon slot="icon-only" :icon="pencilOutline"></ion-icon>
@@ -13,7 +14,7 @@
         <ion-item>
           <ion-grid>
             <ion-row>
-              <ion-col @click="openTaskListModal(project)">
+              <ion-col @click="openTaskListModal(project, isArchive)">
                 <ion-label>
                   <h2 style="font-weight: bold">{{ project.name }}</h2>
                 </ion-label>
@@ -29,7 +30,7 @@
       </ion-item-sliding>
     </div>
   </ion-list>
-  <ion-fab slot="fixed" horizontal="end" vertical="bottom">
+  <ion-fab slot="fixed" horizontal="end" vertical="bottom" v-if="!isArchive">
     <ion-fab-button expand="block" @click="openProjectModal({},true)">
       <ion-icon :icon="add"></ion-icon>
     </ion-fab-button>
@@ -41,5 +42,7 @@ import {IonCol, IonFab, IonFabButton, IonGrid, IonIcon, IonItem, IonList, IonRow
 import {useProjects} from "@/composables/useProjects";
 
 const {projects, openProjectModal, removeProject, openTaskListModal} = useProjects();
+
+defineProps(['isArchive'])
 
 </script>

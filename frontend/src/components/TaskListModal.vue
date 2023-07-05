@@ -7,14 +7,16 @@
         </ion-buttons>
       </ion-toolbar>
     </ion-header>
-    <TaskList :project-id="projectId" :is-archive="false"/>
+    <TaskList v-if="!isArchive" :project-id="projectId"/>
+    <ArchivedTaskList v-if="isArchive" :project-id="projectId"/>
   </ion-content>
 </template>
 <script setup lang="ts">
 import {IonContent, modalController} from "@ionic/vue";
 import TaskList from "@/components/TaskList.vue";
+import ArchivedTaskList from "@/components/ArchivedTaskList.vue";
 
-defineProps(['projectId']);
+defineProps(['projectId', 'isArchive']);
 
 function dismiss() {
   return modalController.dismiss(null, 'cancel');

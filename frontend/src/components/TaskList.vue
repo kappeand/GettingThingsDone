@@ -4,7 +4,7 @@
       <ion-label>{{ projectName }}</ion-label>
     </ion-list-header>
     <div :key="task.id" v-for="task in tasksOfProject">
-      <ion-item-sliding v-if="isArchive ? task.done: !task.done">
+      <ion-item-sliding v-if="!task.done">
         <ion-item>
           <ion-grid>
             <ion-row>
@@ -39,7 +39,7 @@
       </ion-item-sliding>
     </div>
   </ion-list>
-  <ion-fab slot="fixed" horizontal="end" vertical="bottom" v-if="!isArchive">
+  <ion-fab slot="fixed" horizontal="end" vertical="bottom">
     <ion-fab-button expand="block" @click="openTaskModal({'projectId':projectId,'priority':Priority.LOW},true)">
       <ion-icon :icon="add"></ion-icon>
     </ion-fab-button>
@@ -59,14 +59,13 @@ import {
   IonItemOption,
   IonItemSliding,
   IonList,
-  IonRow,
-  onIonViewWillEnter
+  IonRow
 } from "@ionic/vue";
 import {useTasksOfProjectId} from "@/composables/useTasksOfProjectId";
 import {format, utcToZonedTime} from 'date-fns-tz';
 import {useProjects} from "@/composables/useProjects";
 
-const props = defineProps(['projectId', 'isArchive'])
+const props = defineProps(['projectId'])
 const {tasksOfProject, removeTask, finishTask, openTaskModal} = useTasksOfProjectId(props.projectId);
 const {projects} = useProjects();
 const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
