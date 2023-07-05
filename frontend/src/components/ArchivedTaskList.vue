@@ -51,12 +51,10 @@ async function restoreTask(task: Task) {
   await addOrUpdateTask(task);
 }
 
-
 function format_date(date: Date) {
   if (date != undefined) {
     const zonedTime = utcToZonedTime(date, userTimeZone);
     return format(zonedTime, 'dd.MM.yyyy HH:mm', {timeZone: userTimeZone});
   } else return null;
 }
-
 </script>

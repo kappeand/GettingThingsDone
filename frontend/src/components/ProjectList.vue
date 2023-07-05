@@ -5,7 +5,8 @@
       <ion-label v-else>Projects</ion-label>
     </ion-list-header>
     <div :key="project.id" v-for="project in projects">
-      <ion-item-sliding v-if="!isArchive ? project.name != 'Inbox': true">
+      <ion-item-sliding
+          v-if="!isArchive ? project.name != 'Inbox' && containsTasks(project): containsArchivedTasks(project)">
         <ion-item-options side="start">
           <ion-item-option color="success" @click="openProjectModal(project,false)">
             <ion-icon slot="icon-only" :icon="pencilOutline"></ion-icon>
@@ -40,9 +41,17 @@
 import {add, pencilOutline, trashOutline} from "ionicons/icons";
 import {IonCol, IonFab, IonFabButton, IonGrid, IonIcon, IonItem, IonList, IonRow} from "@ionic/vue";
 import {useProjects} from "@/composables/useProjects";
+import {Project} from "@/model/project";
 
 const {projects, openProjectModal, removeProject, openTaskListModal} = useProjects();
 
 defineProps(['isArchive'])
 
+function containsTasks(project: Project) {
+  return project.tasks != undefined ? project.tasks.length > 0 && project.tasks.some(task => !task.done) : false;
+}
+
+function containsArchivedTasks(project: Project) {
+  return project.tasks != undefined ? project.tasks.some(task => task.done) : false;
+}
 </script>

@@ -5,7 +5,6 @@ import {modalController} from "@ionic/vue";
 import ProjectModal from "@/components/ProjectModal.vue";
 import TaskListModal from "@/components/TaskListModal.vue";
 
-
 const projects = ref<Project[]>([]);
 const inboxId = ref<number>(-1);
 
@@ -71,6 +70,7 @@ export function useProjects() {
         openProjectModal,
         openTaskListModal,
         removeProject,
+        loadProjects,
         inboxId,
         projects,
         addOrUpdateProject
