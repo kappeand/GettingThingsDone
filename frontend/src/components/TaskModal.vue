@@ -30,7 +30,7 @@
                           placeholder="Enter description here"></ion-textarea>
           </ion-row>
           <ion-modal :keep-contents-mounted="true">
-            <ion-datetime v-model="modalTask.dueDate" id="datetime"></ion-datetime>
+            <ion-datetime locale="de-CH" first-day-of-week="1" v-model="modalTask.dueDate" id="datetime"></ion-datetime>
           </ion-modal>
           <ion-row>
             <ion-select v-model="modalTask.projectId" aria-label="project" class="always-flip"

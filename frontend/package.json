@@ -21,6 +21,7 @@
     "@ionic/vue": "^7.0.0",
     "@ionic/vue-router": "^7.0.0",
     "axios": "^1.4.0",
+    "date-fns-tz": "^2.0.0",
     "ionicons": "^7.0.0",
     "moment": "^2.29.4",
     "vue": "^3.2.45",

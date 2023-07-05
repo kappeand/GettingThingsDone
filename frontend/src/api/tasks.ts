@@ -25,3 +25,15 @@ export async function saveTask(task: Task): Promise<any> {
         return error;
     }
 }
+
+export async function deleteTask(task: Task): Promise<any> {
+    const config = {
+        withCredentials: true
+    }
+    try {
+        const response = await axios.delete(API_ROOT + '/api/task/' + task.id, config);
+        return response.data;
+    } catch (error) {
+        return error;
+    }
+}

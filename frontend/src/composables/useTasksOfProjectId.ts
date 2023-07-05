@@ -1,16 +1,16 @@
-import {getTasks, saveTask} from '@/api/tasks';
+import {deleteTask, getTasks, saveTask} from '@/api/tasks';
 import {Task} from '@/model/task';
 import {onMounted, ref} from 'vue';
 import {modalController} from "@ionic/vue";
 import TaskModal from "@/components/TaskModal.vue";
 
-const tasksOfProjectId = ref<Task[]>([]);
+const tasksOfProject = ref<Task[]>([]);
 
 export function useTasksOfProjectId(projectId: number) {
 
     const loadTasks = async () => {
         try {
-            tasksOfProjectId.value = await getTasks(projectId);
+            tasksOfProject.value = await getTasks(projectId);
         } catch (error) {
             console.log(error);
         }
@@ -27,6 +27,17 @@ export function useTasksOfProjectId(projectId: number) {
             console.log(error);
         }
     }
+    const removeTask = async (task: Task) => {
+        //wait for delete animation to finish
+        await new Promise(f => setTimeout(f, 500));
+        try {
+            await deleteTask(task);
+            await loadTasks();
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
 
     const addOrUpdateTask = async (task: Task) => {
         try {
@@ -56,7 +67,8 @@ export function useTasksOfProjectId(projectId: number) {
 
     return {
         openTaskModal,
-        tasksOfProjectId,
+        removeTask,
+        tasksOfProject,
         addOrUpdateTask,
         finishTask
     }
