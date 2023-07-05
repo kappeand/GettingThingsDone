@@ -6,7 +6,7 @@
           <ion-label>Inbox</ion-label>
         </ion-list-header>
         <div :key="task.id" v-for="task in tasks" v-if="inboxId>-1">
-          <ion-item @click="openModal(task)" v-if="!task.done && task.projectId == inboxId">
+          <ion-item v-if="!task.done && task.projectId == inboxId">
             <ion-grid>
               <ion-row>
                 <ion-col size="1">
@@ -20,7 +20,7 @@
                                 style="--border-color: green" mode="ios" color="green"
                                 @click="finishTask(task)"></ion-checkbox>
                 </ion-col>
-                <ion-col>
+                <ion-col @click="openModal(task)">
                   {{ task.name }}
                 </ion-col>
               </ion-row>
