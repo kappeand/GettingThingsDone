@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8301d65c-bd29-4c94-8824-643755b7789f" name="Changes" comment="Implemented delete functionality for tasks">
+    <list default="true" id="8301d65c-bd29-4c94-8824-643755b7789f" name="Changes" comment="changed delete to id param">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/TaskModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/TaskModal.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/theme/variables.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/theme/variables.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ProjectList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ProjectList.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +31,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
   </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="87c03ae5-bfd6-431c-90df-89058303fd27" />
+  </component>
   <component name="JpbToolWindowState">
     <option name="isToolWindowVisible" value="false" />
   </component>
@@ -52,42 +55,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/laure/IdeaProjects/GettingThingsDone/frontend/src/api",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "spring.configuration.checksum": "b43fdd98b1fd705ae4c3a10cf25aad8a",
-    "ts.external.directory.path": "C:\\Users\\laure\\IdeaProjects\\GettingThingsDone\\frontend\\node_modules\\typescript\\lib",
-    "ts.rename.search.for.dynamic.occurrences": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/laure/IdeaProjects/GettingThingsDone/frontend/src/api&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;b43fdd98b1fd705ae4c3a10cf25aad8a&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\andri\\IdeaProjects\\GettingThingsDone\\frontend\\node_modules\\typescript\\lib&quot;,
+    &quot;ts.rename.search.for.dynamic.occurrences&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "h2"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;h2&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="ch.zhaw.students.gtd.entity" />
@@ -169,7 +172,7 @@
       <workItem from="1688482991291" duration="1753000" />
       <workItem from="1688492261958" duration="13586000" />
       <workItem from="1688506685929" duration="41000" />
-      <workItem from="1688540568712" duration="16538000" />
+      <workItem from="1688540568712" duration="19474000" />
     </task>
     <task id="LOCAL-00001" summary="customized leantodo project">
       <option name="closed" value="true" />
@@ -379,15 +382,31 @@
       <option name="project" value="LOCAL" />
       <updated>1688557671002</updated>
     </task>
-    <task id="LOCAL-00027" summary="Implemented delete functionality for tasks">
+    <task id="LOCAL-00027" summary="update/create projects implemented">
       <option name="closed" value="true" />
-      <created>1688561754439</created>
+      <created>1688560517996</created>
       <option name="number" value="00027" />
       <option name="presentableId" value="LOCAL-00027" />
       <option name="project" value="LOCAL" />
-      <updated>1688561754439</updated>
+      <updated>1688560517996</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="changed delete to id param">
+      <option name="closed" value="true" />
+      <created>1688561273186</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1688561273186</updated>
+    </task>
+    <task id="LOCAL-00029" summary="work in progress">
+      <option name="closed" value="true" />
+      <created>1688563087643</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1688563087643</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -439,7 +458,9 @@
     <MESSAGE value="added cancel to Modal" />
     <MESSAGE value="changed card modal to sheet modal" />
     <MESSAGE value="refactored TaskList into separate component" />
-    <MESSAGE value="Implemented delete functionality for tasks" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented delete functionality for tasks" />
+    <MESSAGE value="update/create projects implemented" />
+    <MESSAGE value="changed delete to id param" />
+    <MESSAGE value="work in progress" />
+    <option name="LAST_COMMIT_MESSAGE" value="work in progress" />
   </component>
 </project>
