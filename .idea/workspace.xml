@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8301d65c-bd29-4c94-8824-643755b7789f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="8301d65c-bd29-4c94-8824-643755b7789f" name="Changes" comment="Implemented delete functionality for tasks">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/api/tasks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/api/tasks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/TaskList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/TaskList.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/TaskModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/TaskModal.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/composables/useTasksOfProjectId.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/composables/useTasksOfProjectId.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/theme/variables.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/theme/variables.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -384,7 +379,15 @@
       <option name="project" value="LOCAL" />
       <updated>1688557671002</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Implemented delete functionality for tasks">
+      <option name="closed" value="true" />
+      <created>1688561754439</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1688561754439</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -436,6 +439,7 @@
     <MESSAGE value="added cancel to Modal" />
     <MESSAGE value="changed card modal to sheet modal" />
     <MESSAGE value="refactored TaskList into separate component" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactored TaskList into separate component" />
+    <MESSAGE value="Implemented delete functionality for tasks" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented delete functionality for tasks" />
   </component>
 </project>

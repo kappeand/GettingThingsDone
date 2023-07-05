@@ -152,6 +152,9 @@ http://ionicframework.com/docs/theming/ */
         --border-width: 2px;
     }
 
+    ion-datetime-button {
+        padding: 10px 0 ;
+    }
     /*
      * iOS Dark Theme
      * -------------------------------------------

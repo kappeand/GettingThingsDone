@@ -21,13 +21,14 @@
             <ion-input v-model="modalTask.name" placeholder="Title" type="text"></ion-input>
           </ion-row>
           <ion-row>
+            <ion-textarea rows="5" label="Description" v-model="modalTask.description" labelPlacement="stacked"
+                          placeholder="Enter description here"></ion-textarea>
+          </ion-row>
+          <ion-row>
+            <p>Due date</p>
             <ion-datetime-button v-if="modalTask.dueDate != undefined" datetime="datetime"></ion-datetime-button>
             <ion-datetime-button v-if="modalTask.dueDate == undefined" datetime="datetime"
                                  :color="'success'"></ion-datetime-button>
-          </ion-row>
-          <ion-row>
-            <ion-textarea label="Description" v-model="modalTask.description" labelPlacement="stacked"
-                          placeholder="Enter description here"></ion-textarea>
           </ion-row>
           <ion-modal :keep-contents-mounted="true">
             <ion-datetime locale="de-CH" first-day-of-week="1" v-model="modalTask.dueDate" id="datetime"></ion-datetime>
