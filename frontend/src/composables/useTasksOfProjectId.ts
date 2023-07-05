@@ -65,6 +65,7 @@ export function useTasksOfProjectId(projectId: number) {
     });
 
     return {
+        loadTasks,
         openTaskModal,
         removeTask,
         tasksOfProject,

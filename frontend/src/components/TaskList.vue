@@ -59,7 +59,8 @@ import {
   IonItemOption,
   IonItemSliding,
   IonList,
-  IonRow
+  IonRow,
+  onIonViewWillEnter
 } from "@ionic/vue";
 import {useTasksOfProjectId} from "@/composables/useTasksOfProjectId";
 import {format, utcToZonedTime} from 'date-fns-tz';
@@ -78,6 +79,5 @@ function format_date(date: Date) {
     return format(zonedTime, 'dd.MM.yyyy HH:mm', {timeZone: userTimeZone});
   } else return null;
 }
-
 
 </script>
