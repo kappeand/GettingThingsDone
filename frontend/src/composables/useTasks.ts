@@ -40,8 +40,10 @@ export function useTasks() {
     const openModal = async (task: any) => {
         const modal = await modalController.create({
             component: TaskModal,
+            breakpoints: [0, 0.3, 0.5, 0.8],
+            initialBreakpoint: 0.5,
             componentProps: {
-                modalTask: task
+                modalTask: task,
             }
         });
         await modal.present();
