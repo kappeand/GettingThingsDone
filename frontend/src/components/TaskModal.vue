@@ -1,4 +1,11 @@
 <template>
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button color="medium" @click="cancel">Cancel</ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
   <ion-content class="ion-padding">
     <ion-item>
       <ion-input type="text" placeholder="Title" v-model="task.name"></ion-input>
@@ -62,4 +69,8 @@ onMounted(async () => {
     task.value.priority = Priority.LOW
   }
 });
+
+function cancel() {
+  modalController.dismiss(null, 'cancel');
+}
 </script>

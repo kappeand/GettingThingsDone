@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8301d65c-bd29-4c94-8824-643755b7789f" name="Changes" comment="only shows tasks from inbox project in inbox view">
+    <list default="true" id="8301d65c-bd29-4c94-8824-643755b7789f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/views/InboxPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/InboxPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/TaskModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/TaskModal.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +166,7 @@
       <workItem from="1688482991291" duration="1753000" />
       <workItem from="1688492261958" duration="13586000" />
       <workItem from="1688506685929" duration="41000" />
-      <workItem from="1688540568712" duration="305000" />
+      <workItem from="1688540568712" duration="568000" />
     </task>
     <task id="LOCAL-00001" summary="customized leantodo project">
       <option name="closed" value="true" />
@@ -344,7 +344,15 @@
       <option name="project" value="LOCAL" />
       <updated>1688505864256</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="openModal only on col not on checkbox">
+      <option name="closed" value="true" />
+      <created>1688540962168</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1688540962168</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -392,6 +400,7 @@
     <MESSAGE value="working TaskModal" />
     <MESSAGE value="handle opening and closing of TaskModal programmatically" />
     <MESSAGE value="only shows tasks from inbox project in inbox view" />
-    <option name="LAST_COMMIT_MESSAGE" value="only shows tasks from inbox project in inbox view" />
+    <MESSAGE value="openModal only on col not on checkbox" />
+    <option name="LAST_COMMIT_MESSAGE" value="openModal only on col not on checkbox" />
   </component>
 </project>
