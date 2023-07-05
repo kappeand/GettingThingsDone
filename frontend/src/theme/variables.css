@@ -146,6 +146,12 @@ http://ionicframework.com/docs/theming/ */
         --ion-color-light-tint: #383a3e;
     }
 
+    ion-checkbox {
+        --checkmark-width: 2;
+        --checkmark-color: background;
+        --border-width: 2px;
+    }
+
     /*
      * iOS Dark Theme
      * -------------------------------------------
