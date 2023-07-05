@@ -3,6 +3,7 @@ import {Project} from "@/model/project";
 import {deleteProject, getAllProjects, saveProject} from "@/api/projects";
 import {modalController} from "@ionic/vue";
 import ProjectModal from "@/components/ProjectModal.vue";
+import TaskListModal from "@/components/TaskListModal.vue";
 
 
 const projects = ref<Project[]>([]);
@@ -55,8 +56,19 @@ export function useProjects() {
         await modal.present();
     };
 
+    const openTaskListModal = async (project: Project) => {
+        const modal = await modalController.create({
+            component: TaskListModal,
+            componentProps: {
+                projectId: project.id
+            }
+        });
+        await modal.present();
+    }
+
     return {
         openProjectModal,
+        openTaskListModal,
         removeProject,
         inboxId,
         projects,

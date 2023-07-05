@@ -1,7 +1,7 @@
 <template>
   <ion-list lines="inset">
     <ion-list-header mode="ios">
-      <ion-label>Inbox</ion-label>
+      <ion-label>{{ projectName }}</ion-label>
     </ion-list-header>
     <div :key="task.id" v-for="task in tasksOfProject">
       <ion-item-sliding v-if="isArchive ? task.done: !task.done">
@@ -63,10 +63,14 @@ import {
 } from "@ionic/vue";
 import {useTasksOfProjectId} from "@/composables/useTasksOfProjectId";
 import {format, utcToZonedTime} from 'date-fns-tz';
+import {useProjects} from "@/composables/useProjects";
 
 const props = defineProps(['projectId', 'isArchive'])
 const {tasksOfProject, removeTask, finishTask, openTaskModal} = useTasksOfProjectId(props.projectId);
+const {projects} = useProjects();
 const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+const projectName = projects.value.find(project => project.id == props.projectId)?.name;
 
 function format_date(date: Date) {
   if (date != undefined) {

@@ -4,7 +4,7 @@
       <ion-label>Projects</ion-label>
     </ion-list-header>
     <div :key="project.id" v-for="project in projects">
-      <ion-item-sliding>
+      <ion-item-sliding v-if="project.name != 'Inbox'">
         <ion-item-options side="start">
           <ion-item-option color="success" @click="openProjectModal(project,false)">
             <ion-icon slot="icon-only" :icon="pencilOutline"></ion-icon>
@@ -13,7 +13,7 @@
         <ion-item>
           <ion-grid>
             <ion-row>
-              <ion-col @click="openProjectModal(project,false)">
+              <ion-col @click="openTaskListModal(project)">
                 <ion-label>
                   <h2 style="font-weight: bold">{{ project.name }}</h2>
                 </ion-label>
@@ -40,6 +40,6 @@ import {add, pencilOutline, trashOutline} from "ionicons/icons";
 import {IonCol, IonFab, IonFabButton, IonGrid, IonIcon, IonItem, IonList, IonRow} from "@ionic/vue";
 import {useProjects} from "@/composables/useProjects";
 
-const {projects, openProjectModal, removeProject} = useProjects();
+const {projects, openProjectModal, removeProject, openTaskListModal} = useProjects();
 
 </script>
