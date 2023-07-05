@@ -11,18 +11,23 @@
               <ion-row>
                 <ion-col size="1">
                   <ion-checkbox v-if="task.priority == Priority.HIGH"
-                                style="--border-color: red" mode="ios" color="red"
+                                style="--checkmark-color: background ;--border-color: red;--border-color-checked: red;--checkbox-background-checked: red"
+                                mode="ios" color="red"
                                 @click="finishTask(task)"></ion-checkbox>
                   <ion-checkbox v-if="task.priority == Priority.MEDIUM"
-                                style="--border-color: yellow" mode="ios" color="yellow"
+                                style="--checkmark-color: background ;--border-color: yellow;--border-color-checked: yellow;--checkbox-background-checked: yellow"
+                                mode="ios" color="yellow"
                                 @click="finishTask(task)"></ion-checkbox>
                   <ion-checkbox v-if="task.priority == Priority.LOW"
-                                style="--border-color: green" mode="ios" color="green"
+                                style="--border-color: green;--border-color-checked: green;--checkbox-background-checked: green"
+                                mode="ios" color="green"
                                 @click="finishTask(task)"></ion-checkbox>
                 </ion-col>
                 <ion-col @click="openModal(task)">
-                  <div style="font-weight: bold">{{ task.name }}</div>
-                  <div v-if="task.dueDate != undefined">{{ format_date(task.dueDate) }}</div>
+                  <ion-label>
+                    <h2 style="font-weight: bold">{{ task.name }}</h2>
+                    <p>{{ format_date(task.dueDate) }}</p>
+                  </ion-label>
                 </ion-col>
               </ion-row>
             </ion-grid>
@@ -51,6 +56,7 @@ import {
   IonList,
   IonPage,
   IonRow,
+  IonLabel
 } from "@ionic/vue";
 import {add} from 'ionicons/icons';
 import {useTasks} from "@/composables/useTasks";
