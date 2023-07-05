@@ -6,15 +6,15 @@
           <ion-checkbox v-if="modalTask.priority == Priority.HIGH"
                         style="--checkmark-color: background ;--border-color: red;--border-color-checked: red;--checkbox-background-checked: red"
                         mode="ios" color="red"
-                        @click="finishTask;modalController.dismiss();"></ion-checkbox>
+                        @click="finishTask(modalTask);modalController.dismiss();"></ion-checkbox>
           <ion-checkbox v-if="modalTask.priority == Priority.MEDIUM"
                         style="--checkmark-color: background ;--border-color: yellow;--border-color-checked: yellow;--checkbox-background-checked: yellow"
                         mode="ios" color="yellow"
-                        @click="finishTask;modalController.dismiss();"></ion-checkbox>
+                        @click="finishTask(modalTask);modalController.dismiss();"></ion-checkbox>
           <ion-checkbox v-if="modalTask.priority == Priority.LOW"
                         style="--border-color: green;--border-color-checked: green;--checkbox-background-checked: green"
                         mode="ios" color="green"
-                        @click="finishTask;modalController.dismiss();"></ion-checkbox>
+                        @click="finishTask(modalTask);modalController.dismiss();"></ion-checkbox>
         </ion-col>
         <ion-col>
           <ion-row>
@@ -24,6 +24,10 @@
             <ion-datetime-button v-if="modalTask.dueDate != undefined" datetime="datetime"></ion-datetime-button>
             <ion-datetime-button v-if="modalTask.dueDate == undefined" datetime="datetime"
                                  :color="'success'"></ion-datetime-button>
+          </ion-row>
+          <ion-row>
+            <ion-textarea label="Description" v-model="modalTask.description" labelPlacement="stacked"
+                          placeholder="Enter description here"></ion-textarea>
           </ion-row>
           <ion-modal :keep-contents-mounted="true">
             <ion-datetime v-model="modalTask.dueDate" id="datetime"></ion-datetime>
