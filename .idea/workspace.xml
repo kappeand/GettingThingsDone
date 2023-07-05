@@ -142,6 +142,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Spring Boot.Backend (1)" />
+      <item itemvalue="Spring Boot.Backend" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.Backend (1)" />

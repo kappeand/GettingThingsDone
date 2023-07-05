@@ -21,7 +21,8 @@
                                 @click="finishTask(task)"></ion-checkbox>
                 </ion-col>
                 <ion-col @click="openModal(task)">
-                  {{ task.name }}
+                  <div style="font-weight: bold">{{ task.name }}</div>
+                  <div v-if="task.dueDate != undefined">{{ format_date(task.dueDate) }}</div>
                 </ion-col>
               </ion-row>
             </ion-grid>
@@ -56,6 +57,7 @@ import {useTasks} from "@/composables/useTasks";
 import {useProjects} from "@/composables/useProjects";
 import {Priority} from "@/model/task";
 import {onMounted, ref} from "vue";
+import moment from 'moment';
 
 const {tasks, finishTask, openModal} = useTasks();
 const {getInboxId} = useProjects();
@@ -64,4 +66,11 @@ let inboxId = ref(-1);
 onMounted(async () => {
   inboxId.value = await getInboxId() as number;
 })
+
+function format_date(value: Date) {
+  if (value) {
+    return moment(String(value)).format('hh:mm DD.MM.YYYY')
+  }
+}
+
 </script>
