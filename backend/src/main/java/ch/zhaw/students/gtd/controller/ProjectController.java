@@ -4,9 +4,7 @@ import ch.zhaw.students.gtd.entity.Project;
 import ch.zhaw.students.gtd.entity.ProjectRepository;
 import ch.zhaw.students.gtd.entity.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -33,7 +31,6 @@ public class ProjectController {
     }
 
     public void delete(Long projectId) {
-        projectRepository.delete(projectRepository.findById(projectId)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Project not found.")));
+        projectRepository.deleteById(projectId);
     }
 }

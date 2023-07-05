@@ -39,7 +39,7 @@ public class TaskController {
         taskRepository.save(task);
     }
 
-    public void delete(Task task) {
-        taskRepository.delete(task);
+    public void delete(Long taskId) {
+        taskRepository.deleteById(taskId);
     }
 }

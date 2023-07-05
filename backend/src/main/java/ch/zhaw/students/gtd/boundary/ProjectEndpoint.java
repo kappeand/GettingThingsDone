@@ -37,9 +37,9 @@ public class ProjectEndpoint {
         projectController.update(project, principal.getName());
     }
 
-    @RequestMapping(path = "/api/project", method = RequestMethod.DELETE)
+    @RequestMapping(path = "/api/project/{projectId}", method = RequestMethod.DELETE)
     @PreAuthorize("isAuthenticated() AND hasRole('USER')")
-    public void deleteProject(@RequestParam Long projectId) {
+    public void deleteProject(@PathVariable Long projectId) {
         projectController.delete(projectId);
     }
 }
