@@ -31,8 +31,7 @@ export async function deleteTask(task: Task): Promise<any> {
         withCredentials: true
     }
     try {
-        const response = await axios.delete(API_ROOT + '/api/task/' + task.id, config);
-        return response.data;
+        await axios.delete(API_ROOT + '/api/task/' + task.id, config);
     } catch (error) {
         return error;
     }

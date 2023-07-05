@@ -1,6 +1,6 @@
 import {onMounted, ref} from 'vue';
 import {Project} from "@/model/project";
-import {getAllProjects, saveProject} from "@/api/projects";
+import {deleteProject, getAllProjects, saveProject} from "@/api/projects";
 import {modalController} from "@ionic/vue";
 import ProjectModal from "@/components/ProjectModal.vue";
 
@@ -27,6 +27,17 @@ export function useProjects() {
         }
     }
 
+    async function removeProject(project: Project) {
+        //wait for delete animation to finish
+        await new Promise(f => setTimeout(f, 500));
+        try {
+            await deleteProject(project);
+            await loadProjects();
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     onMounted(async () => {
         await loadProjects();
         inboxId.value = projects.value.find((project) => project.name == "Inbox")?.id!;
@@ -47,6 +58,7 @@ export function useProjects() {
 
     return {
         openProjectModal,
+        removeProject,
         inboxId,
         projects,
         addOrUpdateProject

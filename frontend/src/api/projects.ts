@@ -25,3 +25,14 @@ export async function saveProject(project: Project): Promise<any> {
         return error;
     }
 }
+
+export async function deleteProject(project: Project): Promise<any> {
+    const config = {
+        withCredentials: true
+    }
+    try {
+        await axios.delete(API_ROOT + '/api/project/' + project.id, config);
+    } catch (error) {
+        return error;
+    }
+}
