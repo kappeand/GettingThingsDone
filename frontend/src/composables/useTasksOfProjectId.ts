@@ -37,7 +37,7 @@ export function useTasksOfProjectId(projectId: number) {
         }
     }
 
-    const openModal = async (task: Task, isNewTask: boolean) => {
+    const openTaskModal = async (task: Task, isNewTask: boolean) => {
         const modal = await modalController.create({
             component: TaskModal,
             breakpoints: [0, 0.3, 0.5, 0.8],
@@ -53,8 +53,9 @@ export function useTasksOfProjectId(projectId: number) {
     onMounted(async () => {
         await loadTasks();
     });
+
     return {
-        openModal,
+        openTaskModal,
         tasksOfProjectId,
         addOrUpdateTask,
         finishTask

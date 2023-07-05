@@ -22,7 +22,7 @@
                               mode="ios" color="green"
                               @click="finishTask(task)"></ion-checkbox>
               </ion-col>
-              <ion-col @click="openModal(task,false)">
+              <ion-col @click="openTaskModal(task,false)">
                 <ion-label>
                   <h2 style="font-weight: bold">{{ task.name }}</h2>
                   <p>{{ format_date(task.dueDate) }}</p>
@@ -35,7 +35,7 @@
     </div>
   </ion-list>
   <ion-fab slot="fixed" horizontal="end" vertical="bottom" v-if="!isArchive">
-    <ion-fab-button expand="block" @click="openModal({'projectId':projectId,'priority':Priority.LOW},true)">
+    <ion-fab-button expand="block" @click="openTaskModal({'projectId':projectId,'priority':Priority.LOW},true)">
       <ion-icon :icon="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
@@ -48,7 +48,7 @@ import {useTasksOfProjectId} from "@/composables/useTasksOfProjectId";
 import moment from "moment/moment";
 
 const props = defineProps(['projectId', 'isArchive'])
-const {tasksOfProjectId, finishTask, openModal} = useTasksOfProjectId(props.projectId);
+const {tasksOfProjectId, finishTask, openTaskModal} = useTasksOfProjectId(props.projectId);
 
 function format_date(value: Date) {
   if (value) {

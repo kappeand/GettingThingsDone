@@ -27,7 +27,8 @@ public class ProjectController {
         return projectRepository.findByOwner(userRepository.getReferenceById(ownerName));
     }
 
-    public void update(Project project) {
+    public void update(Project project, String ownerName) {
+        project.setOwner(userRepository.getReferenceById(ownerName));
         projectRepository.save(project);
     }
 

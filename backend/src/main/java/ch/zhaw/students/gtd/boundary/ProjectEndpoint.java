@@ -2,6 +2,7 @@ package ch.zhaw.students.gtd.boundary;
 
 import ch.zhaw.students.gtd.controller.ProjectController;
 import ch.zhaw.students.gtd.entity.Project;
+import ch.zhaw.students.gtd.entity.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +16,8 @@ public class ProjectEndpoint {
 
     @Autowired
     private ProjectController projectController;
+    @Autowired
+    private UserRepository userRepository;
 
     @RequestMapping(path = "/api/project", method = RequestMethod.PUT)
     @PreAuthorize("isAuthenticated() AND hasRole('USER')")
@@ -30,8 +33,8 @@ public class ProjectEndpoint {
 
     @RequestMapping(path = "/api/project", method = RequestMethod.POST)
     @PreAuthorize("isAuthenticated() AND hasRole('USER')")
-    public void updateProject(@RequestBody Project project) {
-        projectController.update(project);
+    public void updateProject(@RequestBody Project project, Principal principal) {
+        projectController.update(project, principal.getName());
     }
 
     @RequestMapping(path = "/api/project", method = RequestMethod.DELETE)
