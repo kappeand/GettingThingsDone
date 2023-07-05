@@ -1,18 +1,18 @@
-import {getAllTasks, saveTask} from '@/api/tasks';
+import {getTasks, saveTask} from '@/api/tasks';
 import {Task} from '@/model/task';
 import {onMounted, ref} from 'vue';
 import {modalController} from "@ionic/vue";
 import TaskModal from "@/components/TaskModal.vue";
 
-const tasks = ref<Task[]>([]);
+const tasksOfProjectId = ref<Task[]>([]);
 
-export function useTasks() {
+export function useTasksOfProjectId(projectId: number) {
 
     const loadTasks = async () => {
         try {
-            tasks.value = await getAllTasks();
+            tasksOfProjectId.value = await getTasks(projectId);
         } catch (error) {
-            console.log(error); // FIXME: Errorhandling
+            console.log(error);
         }
     }
 
@@ -24,7 +24,7 @@ export function useTasks() {
             await saveTask(task);
             await loadTasks();
         } catch (error) {
-            console.log(error); // FIXME: Errorhandling
+            console.log(error);
         }
     }
 
@@ -33,27 +33,29 @@ export function useTasks() {
             await saveTask(task);
             await loadTasks();
         } catch (error) {
-            console.log(error); // FIXME: Errorhandling
+            console.log(error);
         }
     }
 
-    const openModal = async (task: any) => {
+    const openModal = async (task: any, isNewTask: boolean) => {
         const modal = await modalController.create({
             component: TaskModal,
             breakpoints: [0, 0.3, 0.5, 0.8],
             initialBreakpoint: 0.5,
             componentProps: {
                 modalTask: task,
+                isNewTask: isNewTask
             }
         });
         await modal.present();
     }
 
-
-    onMounted(loadTasks);
+    onMounted(async () => {
+        await loadTasks();
+    });
     return {
         openModal,
-        tasks,
+        tasksOfProjectId,
         addOrUpdateTask,
         finishTask
     }
