@@ -8,7 +8,7 @@
         <ion-item>
           <ion-grid>
             <ion-row>
-              <ion-col size="1">
+              <ion-col size="1.5">
                 <ion-checkbox v-if="task.priority == Priority.HIGH"
                               style="--checkmark-color: background ;--border-color: red;--border-color-checked: red;--checkbox-background-checked: red"
                               mode="ios" color="red"
@@ -25,7 +25,8 @@
               <ion-col @click="openTaskModal(task,false)">
                 <ion-label>
                   <h2 style="font-weight: bold">{{ task.name }}</h2>
-                  <p>{{ format_date(task.dueDate) }}</p>
+                  {{ typeof task.dueDate }}
+                  <p>{{ format_date(task.dueDate.toString()) }}</p>
                 </ion-label>
               </ion-col>
             </ion-row>
@@ -62,20 +63,17 @@ import {
   IonRow
 } from "@ionic/vue";
 import {useTasksOfProjectId} from "@/composables/useTasksOfProjectId";
-import {format, utcToZonedTime} from 'date-fns-tz';
+import {format, parseISO} from 'date-fns';
 import {useProjects} from "@/composables/useProjects";
 
 const props = defineProps(['projectId'])
 const {tasksOfProject, removeTask, finishTask, openTaskModal} = useTasksOfProjectId(props.projectId);
 const {projects} = useProjects();
-const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-
 const projectName = projects.value.find(project => project.id == props.projectId)?.name;
 
-function format_date(date: Date) {
-  if (date != undefined) {
-    const zonedTime = utcToZonedTime(date, userTimeZone);
-    return format(zonedTime, 'dd.MM.yyyy HH:mm', {timeZone: userTimeZone});
+function format_date(inputDate: string) {
+  if (inputDate != null) {
+    return format(new Date(inputDate), 'dd.MM.yyyy');
   } else return null;
 }
 

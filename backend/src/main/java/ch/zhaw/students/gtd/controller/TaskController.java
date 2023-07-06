@@ -32,7 +32,7 @@ public class TaskController {
     }
 
     public List<Task> readByProject(Long id) {
-        return taskRepository.findByProjectIdOrderByPriorityDescDueDateDesc(id);
+        return taskRepository.findByProjectIdOrderByPriorityDescDueDateAsc(id);
     }
 
     public void update(Task task) {

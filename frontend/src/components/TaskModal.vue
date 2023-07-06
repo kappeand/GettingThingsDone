@@ -2,7 +2,7 @@
   <ion-content class="ion-padding">
     <ion-grid>
       <ion-row>
-        <ion-col size="1" v-if="!isNewTask" style="padding-top: 4%">
+        <ion-col size="1.25" v-if="!isNewTask" style="padding-top: 4%">
           <ion-checkbox v-if="modalTask.priority == Priority.HIGH"
                         style="--checkmark-color: background ;--border-color: red;--border-color-checked: red;--checkbox-background-checked: red"
                         mode="ios" color="red"
@@ -26,11 +26,15 @@
           </ion-row>
           <ion-row>
             <p>Due date</p>
-            <ion-datetime-button v-if="modalTask.dueDate != undefined" datetime="datetime"></ion-datetime-button>
-            <ion-datetime-button v-if="modalTask.dueDate == undefined" datetime="datetime"></ion-datetime-button>
+            <ion-col></ion-col>
+            <ion-col size="auto">
+              <ion-datetime-button datetime="datetime"></ion-datetime-button>
+            </ion-col>
           </ion-row>
           <ion-modal :keep-contents-mounted="true">
-            <ion-datetime locale="de-CH" first-day-of-week="1" v-model="modalTask.dueDate" id="datetime"></ion-datetime>
+            <ion-datetime :min="(new Date().getFullYear()-1).toString()" :max="(new Date().getFullYear()+5).toString()"
+                          presentation="date" first-day-of-week="1" v-model="modalTask.dueDate"
+                          id="datetime"></ion-datetime>
           </ion-modal>
           <ion-row>
             <ion-select v-model="modalTask.projectId" aria-label="project" class="always-flip"
@@ -43,9 +47,9 @@
           <ion-row>
             <ion-select v-model="modalTask.priority" aria-label="priority" class="always-flip"
                         toggleIcon="caret-down-sharp" interface="popover" label="Priority">
-              <ion-select-option value="HIGH">High</ion-select-option>
-              <ion-select-option value="MEDIUM">Medium</ion-select-option>
-              <ion-select-option value="LOW">Low</ion-select-option>
+              <ion-select-option :value="Priority.HIGH">High</ion-select-option>
+              <ion-select-option :value="Priority.MEDIUM">Medium</ion-select-option>
+              <ion-select-option :value="Priority.LOW">Low</ion-select-option>
             </ion-select>
           </ion-row>
         </ion-col>
@@ -84,4 +88,5 @@ async function handleButton() {
   await addOrUpdateTask(props.modalTask);
   await modalController.dismiss();
 }
+
 </script>
