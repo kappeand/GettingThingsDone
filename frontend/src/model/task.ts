@@ -1,7 +1,7 @@
 import {Project} from "@/model/project";
 
 export enum Priority {
-    HIGH = "HIGH", MEDIUM = "MEDIUM", LOW = "LOW"
+    HIGH = 3, MEDIUM = 2, LOW = 1
 }
 
 export interface Task {
