@@ -25,8 +25,7 @@
               <ion-col @click="openTaskModal(task,false)">
                 <ion-label>
                   <h2 style="font-weight: bold">{{ task.name }}</h2>
-                  {{ typeof task.dueDate }}
-                  <p>{{ format_date(task.dueDate.toString()) }}</p>
+                  <p>{{ format_date(task.dueDate) }}</p>
                 </ion-label>
               </ion-col>
             </ion-row>
@@ -71,9 +70,9 @@ const {tasksOfProject, removeTask, finishTask, openTaskModal} = useTasksOfProjec
 const {projects} = useProjects();
 const projectName = projects.value.find(project => project.id == props.projectId)?.name;
 
-function format_date(inputDate: string) {
+function format_date(inputDate: any) {
   if (inputDate != null) {
-    return format(new Date(inputDate), 'dd.MM.yyyy');
+    return format(new Date(inputDate.toString()), 'dd.MM.yyyy');
   } else return null;
 }
 
