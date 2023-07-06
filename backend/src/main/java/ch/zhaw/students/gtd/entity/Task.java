@@ -19,8 +19,7 @@ public class Task {
     @Temporal(TemporalType.TIMESTAMP)
     private Date dueDate;
 
-    @Enumerated(EnumType.STRING)
-    private Priority priority;
+    private int priority;
 
     private boolean done;
 
@@ -29,7 +28,7 @@ public class Task {
     public Task() {
     }
 
-    public Task(String name, String description, Date dueDate, Priority priority, boolean done, Long projectId) {
+    public Task(String name, String description, Date dueDate, int priority, boolean done, Long projectId) {
         this.name = name;
         this.description = description;
         this.dueDate = dueDate;
