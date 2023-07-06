@@ -28,7 +28,6 @@ export function useProjects() {
     }
 
     async function removeProject(project: Project) {
-        console.log(project.id);
         try {
             await deleteProject(project);
             await loadProjects();

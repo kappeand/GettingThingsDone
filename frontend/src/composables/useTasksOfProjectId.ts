@@ -28,7 +28,6 @@ export function useTasksOfProjectId(projectId: number) {
         }
     }
     const removeTask = async (task: Task) => {
-        console.log(task.id);
         try {
             await deleteTask(task);
             await loadTasks();
