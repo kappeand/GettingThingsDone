@@ -20,6 +20,7 @@
           <ion-row>
             <ion-input v-model="modalTask.name" placeholder="Title" type="text"></ion-input>
           </ion-row>
+
           <ion-row>
             <ion-textarea rows="5" label="Description" v-model="modalTask.description" labelPlacement="stacked"
                           placeholder="Enter description here"></ion-textarea>

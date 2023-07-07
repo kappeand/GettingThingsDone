@@ -65,7 +65,7 @@ import {useTasksOfProjectId} from "@/composables/useTasksOfProjectId";
 import {format, parseISO} from 'date-fns';
 import {useProjects} from "@/composables/useProjects";
 
-const props = defineProps(['projectId'])
+const props = defineProps(['projectId']);
 const {tasksOfProject, removeTask, finishTask, openTaskModal} = useTasksOfProjectId(props.projectId);
 const {projects} = useProjects();
 const projectName = projects.value.find(project => project.id == props.projectId)?.name;

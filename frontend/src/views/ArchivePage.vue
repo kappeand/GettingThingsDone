@@ -7,6 +7,19 @@
 </template>
 
 <script setup lang="ts">
-import {IonContent, IonPage} from '@ionic/vue';
+import {IonContent, IonPage, onIonViewWillEnter, onIonViewWillLeave} from '@ionic/vue';
 import ProjectList from "@/components/ProjectList.vue";
+import {useProjects} from "@/composables/useProjects";
+import {ref} from "vue";
+
+const {loadProjects} = useProjects();
+
+let projectsLoaded = ref<boolean>(false);
+onIonViewWillEnter(async () => {
+  await loadProjects();
+  projectsLoaded.value = true;
+});
+onIonViewWillLeave(() => {
+  projectsLoaded.value = false;
+});
 </script>
